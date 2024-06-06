@@ -21,17 +21,40 @@
     font-size: 1.5rem;
 }
 
+
 .card {
     margin-top: 10px;
     padding: 10px;
     background-color: rgb(43, 110, 253, 90%);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 5px;
 }
 
+.content {
+    background-color: aqua;
+    width: 100%;
+}
+
+.content .list-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.content .list-menu li {
+    font-size: 0.8rem;
+}
+
 /* #######INICIO DO ESTILO DA FASE 1 ########*/
+
+.mae {
+    display: flex;
+    gap: 5px;
+}
 
 .fase1 {
     width: 260px;
