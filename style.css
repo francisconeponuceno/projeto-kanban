@@ -66,6 +66,7 @@
     display: flex;
     color: maroon;
     font-size: 0.8rem;
+    display: none;
 }
 
 .fase1 .desc span {
@@ -117,6 +118,7 @@
     display: flex;
     color: black;
     font-size: 0.8rem;
+    display: none;
 }
 
 .fase2 .desc span {
@@ -168,6 +170,7 @@
     display: flex;
     color: purple;
     font-size: 0.8rem;
+    display: none;
 }
 
 .fase3 .desc span {
@@ -219,6 +222,7 @@
     display: flex;
     color: orange;
     font-size: 0.8rem;
+    display: none;
 }
 
 .fase4 .desc span {
@@ -270,6 +274,7 @@
     display: flex;
     color: green;
     font-size: 0.8rem;
+    display: none;
 }
 
 .fase5 .desc span {
@@ -285,14 +290,17 @@
 }
 
 /* #######FIM DO ESTILO DA FASE 5 ########*/
+/* ########################################*/
+
+/* #######INICIO DO ESTILO DO PASSO 1 ########*/
 
 .passo1{
     height: 126px;
-    display: none;
+    display: block;
 }
 
 .passo1 i {
-    color: green;
+    color: maroon;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -301,7 +309,100 @@
 }
 
 .passo1 p {
+    color: maroon;
+    text-align: center;
+}
+
+/* #######FIM DO ESTILO DO PASSO 1 ########*/
+
+/* #######INICIO DO ESTILO DO PASSO 2 ########*/
+
+.passo2{
+    height: 126px;
+    display: block;
+}
+
+.passo2 i {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.passo2 p {
+    color: black;
+    text-align: center;
+}
+
+/* #######FIM DO ESTILO DO PASSO 2 ########*/
+
+/* #######INICIO DO ESTILO DO PASSO 3 ########*/
+
+.passo3{
+    height: 126px;
+    display: block;
+}
+
+.passo3 i {
+    color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.passo3 p {
+    color: purple;
+    text-align: center;
+}
+
+/* #######FIM DO ESTILO DO PASSO 3 ########*/
+
+/* #######INICIO DO ESTILO DO PASSO 4 ########*/
+
+.passo4{
+    height: 126px;
+    display: block;
+}
+
+.passo4 i {
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.passo4 p {
+    color: orange;
+    text-align: center;
+}
+
+/* #######FIM DO ESTILO DO PASSO 4 ########*/
+
+/* #######INICIO DO ESTILO DO PASSO 5 ########*/
+
+.passo5{
+    height: 126px;
+    display: block;
+}
+
+.passo5 i {
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.passo5 p {
     color: green;
     text-align: center;
 }
 
+/* #######FIM DO ESTILO DO PASSO 5 ########*/
