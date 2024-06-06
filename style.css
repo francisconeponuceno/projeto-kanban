@@ -31,7 +31,213 @@
     gap: 5px;
 }
 
-.geral {
+/* #######INICIO DO ESTILO DA FASE 1 ########*/
+
+.fase1 {
+    width: 260px;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid maroon;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.fase1 .title {
+    display: flex;
+    height: 30px;
+    background-color: maroon;
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.fase1 .descricao {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.fase1 .desc {
+    display: flex;
+    color: maroon;
+    font-size: 0.8rem;
+}
+
+.fase1 .desc span {
+    display: flex;
+    padding-top: 3px;
+    margin-left: 5px;
+}
+
+.fase1 .descricao h2 {
+    font-size: 0.8rem;
+    color: maroon;
+    padding-top: 3px;
+}
+
+/* #######FIM DO ESTILO DA FASE 1 ########*/
+
+/* #######INICIO DO ESTILO DA FASE 2 ########*/
+
+.fase2 {
+    width: 260px;
+    color: black;
+    border-radius: 10px;
+    border: 3px solid yellow;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.fase2 .title {
+    display: flex;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.fase2 .descricao {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.fase2 .desc {
+    display: flex;
+    color: black;
+    font-size: 0.8rem;
+}
+
+.fase2 .desc span {
+    display: flex;
+    padding-top: 3px;
+    margin-left: 5px;
+}
+
+.fase2 .descricao h2 {
+    font-size: 0.8rem;
+    color: black;
+    padding-top: 3px;
+}
+
+/* #######FIM DO ESTILO DA FASE 2 ########*/
+
+/* #######INICIO DO ESTILO DA FASE 3 ########*/
+
+.fase3 {
+    width: 260px;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid purple;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.fase3 .title {
+    display: flex;
+    height: 30px;
+    background-color: purple;
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.fase3 .descricao {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.fase3 .desc {
+    display: flex;
+    color: purple;
+    font-size: 0.8rem;
+}
+
+.fase3 .desc span {
+    display: flex;
+    padding-top: 3px;
+    margin-left: 5px;
+}
+
+.fase3 .descricao h2 {
+    font-size: 0.8rem;
+    color: purple;
+    padding-top: 3px;
+}
+
+/* #######FIM DO ESTILO DA FASE 3 ########*/
+
+/* #######INICIO DO ESTILO DA FASE 4 ########*/
+
+.fase4 {
+    width: 260px;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid orange;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.fase4 .title {
+    display: flex;
+    height: 30px;
+    background-color: orange;
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.fase4 .descricao {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.fase4 .desc {
+    display: flex;
+    color: orange;
+    font-size: 0.8rem;
+}
+
+.fase4 .desc span {
+    display: flex;
+    padding-top: 3px;
+    margin-left: 5px;
+}
+
+.fase4 .descricao h2 {
+    font-size: 0.8rem;
+    color: orange;
+    padding-top: 3px;
+}
+
+/* #######FIM DO ESTILO DA FASE 4 ########*/
+
+/* #######INICIO DO ESTILO DA FASE 5 ########*/
+
+.fase5 {
     width: 260px;
     color: white;
     border-radius: 10px;
@@ -39,10 +245,9 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-
 }
 
-.title {
+.fase5 .title {
     display: flex;
     height: 30px;
     background-color: green;
@@ -51,62 +256,52 @@
     align-items: center;
     text-align: center;
     font-size: 0.8rem;
-    
 }
 
-.descricao {
+.fase5 .descricao {
     display: flex;
     flex-direction: column;
     margin: 5px;
     border-radius: 5px;
     padding: 5px;
-
 }
 
-.desc{
+.fase5 .desc {
     display: flex;
     color: green;
     font-size: 0.8rem;
-
 }
-.desc span {
+
+.fase5 .desc span {
     display: flex;
     padding-top: 3px;
     margin-left: 5px;
-    
 }
 
-.descricao h2 {
+.fase5 .descricao h2 {
     font-size: 0.8rem;
     color: green;
     padding-top: 3px;
-    
 }
 
-.icon {
-    display: flex;
-    color: green;
-    margin-left: auto;
-    justify-content: center;
-    font-size: 1.8rem;
-    
+/* #######FIM DO ESTILO DA FASE 5 ########*/
+
+.passo1{
+    height: 126px;
+    display: none;
 }
 
-.icon i {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 5px;
-    margin-right: 10px;
-}
-
-/*###########################*/
 .passo1 i {
     color: green;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 20px;
 }
 
+.passo1 p {
+    color: green;
+    text-align: center;
+}
 
