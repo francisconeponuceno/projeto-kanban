@@ -43,7 +43,6 @@ header{
 }
 
 .content {
-    background-color: aqua;
     width: 100%;
     padding: 10px;
     
@@ -53,19 +52,37 @@ header{
 nav {
     display: flex;
     flex-direction: column;
-    background-color: blueviolet;
     width: 100%;
+    margin: auto;
+    margin-right: 10px;
 }
 
 nav .menu  {
     padding-bottom: 10px;
     display: flex;
-    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+nav .menu div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+nav .menu .destino {
+    width: 400px;
+}
+nav .menu .motorista {
+    width: 400px;
 }
 
 nav .menu span {
-    font-size: 1.3rem;
-    padding-right: 10px;
+    font-size: 0.8rem;
+    padding-top: 10px;
 }
  
 img {
@@ -84,7 +101,7 @@ img {
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid red;
+    border: 3px solid blue;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -93,7 +110,7 @@ img {
 .fase1 .title {
     display: flex;
     height: 30px;
-    background-color: red;
+    background-color: blue;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -109,25 +126,6 @@ img {
     padding: 5px;
 }
 
-.fase1 .desc {
-    display: flex;
-    color: red;
-    font-size: 0.8rem;
-    display: none;
-}
-
-.fase1 .desc span {
-    display: flex;
-    padding-top: 3px;
-    margin-left: 5px;
-}
-
-.fase1 .descricao h2 {
-    font-size: 0.8rem;
-    color: red;
-    padding-top: 3px;
-}
-
 /* #######FIM DO ESTILO DA FASE 1 ########*/
 
 /* #######INICIO DO ESTILO DA FASE 2 ########*/
@@ -136,7 +134,7 @@ img {
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid red;
+    border: 3px solid blue;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -145,7 +143,7 @@ img {
 .fase2 .title {
     display: flex;
     height: 30px;
-    background-color: red;
+    background-color: blue;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -161,25 +159,6 @@ img {
     padding: 5px;
 }
 
-.fase2 .desc {
-    display: flex;
-    color: white;
-    font-size: 0.8rem;
-    display: none;
-}
-
-.fase2 .desc span {
-    display: flex;
-    padding-top: 3px;
-    margin-left: 5px;
-}
-
-.fase2 .descricao h2 {
-    font-size: 0.8rem;
-    color: white;
-    padding-top: 3px;
-}
-
 /* #######FIM DO ESTILO DA FASE 2 ########*/
 
 /* #######INICIO DO ESTILO DA FASE 3 ########*/
@@ -188,7 +167,7 @@ img {
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid red;
+    border: 3px solid blue;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -197,7 +176,7 @@ img {
 .fase3 .title {
     display: flex;
     height: 30px;
-    background-color: red;
+    background-color: blue;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -213,25 +192,6 @@ img {
     padding: 5px;
 }
 
-.fase3 .desc {
-    display: flex;
-    color: red;
-    font-size: 0.8rem;
-    display: none;
-}
-
-.fase3 .desc span {
-    display: flex;
-    padding-top: 3px;
-    margin-left: 5px;
-}
-
-.fase3 .descricao h2 {
-    font-size: 0.8rem;
-    color: red;
-    padding-top: 3px;
-}
-
 /* #######FIM DO ESTILO DA FASE 3 ########*/
 
 /* #######INICIO DO ESTILO DA FASE 4 ########*/
@@ -240,7 +200,7 @@ img {
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid red;
+    border: 3px solid blue;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -249,7 +209,7 @@ img {
 .fase4 .title {
     display: flex;
     height: 30px;
-    background-color: red;
+    background-color: blue;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -265,25 +225,6 @@ img {
     padding: 5px;
 }
 
-.fase4 .desc {
-    display: flex;
-    color: red;
-    font-size: 0.8rem;
-    display: none;
-}
-
-.fase4 .desc span {
-    display: flex;
-    padding-top: 3px;
-    margin-left: 5px;
-}
-
-.fase4 .descricao h2 {
-    font-size: 0.8rem;
-    color: red;
-    padding-top: 3px;
-}
-
 /* #######FIM DO ESTILO DA FASE 4 ########*/
 
 /* #######INICIO DO ESTILO DA FASE 5 ########*/
@@ -292,7 +233,7 @@ img {
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid red;
+    border: 3px solid blue;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -301,7 +242,7 @@ img {
 .fase5 .title {
     display: flex;
     height: 30px;
-    background-color: red;
+    background-color: blue;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -317,25 +258,6 @@ img {
     padding: 5px;
 }
 
-.fase5 .desc {
-    display: flex;
-    color: red;
-    font-size: 0.8rem;
-    display: none;
-}
-
-.fase5 .desc span {
-    display: flex;
-    padding-top: 3px;
-    margin-left: 5px;
-}
-
-.fase5 .descricao h2 {
-    font-size: 0.8rem;
-    color: red;
-    padding-top: 3px;
-}
-
 /* #######FIM DO ESTILO DA FASE 5 ########*/
 /* ########################################*/
 
@@ -347,7 +269,7 @@ img {
 }
 
 .passo1 i {
-    color: red;
+    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -356,7 +278,7 @@ img {
 }
 
 .passo1 p {
-    color: red;
+    color: blue;
     text-align: center;
 }
 
@@ -370,7 +292,7 @@ img {
 }
 
 .passo2 i {
-    color: red;
+    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -379,7 +301,7 @@ img {
 }
 
 .passo2 p {
-    color: red;
+    color: blue;
     text-align: center;
 }
 
@@ -393,7 +315,7 @@ img {
 }
 
 .passo3 i {
-    color: red;
+    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -402,7 +324,7 @@ img {
 }
 
 .passo3 p {
-    color: red;
+    color: blue;
     text-align: center;
 }
 
@@ -416,7 +338,7 @@ img {
 }
 
 .passo4 i {
-    color: red;
+    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -425,7 +347,7 @@ img {
 }
 
 .passo4 p {
-    color: red;
+    color: blue;
     text-align: center;
 }
 
@@ -439,7 +361,7 @@ img {
 }
 
 .passo5 i {
-    color: red;
+    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -448,7 +370,7 @@ img {
 }
 
 .passo5 p {
-    color: red;
+    color: blue;
     text-align: center;
 }
 
