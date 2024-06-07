@@ -29,14 +29,12 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--vermelho);
-    height: 65px;
+    height: 70px;
     color: var(--branco);
     font-size: 1.5rem;
 }
 
-
 .card {
-    margin-top: 10px;
     padding: 10px;
     background-color: var(--azul2);
     display: flex;
@@ -49,12 +47,14 @@ body {
 header{
     display: flex;
     justify-content: space-between;
+    height: 60px;
 }
 
 .content {
     width: 100%;
-    padding: 10px;
-    
+    padding: 3px;
+    border: 2px solid var(--branco);
+    border-radius: 5px;
 }
 
 
@@ -95,7 +95,7 @@ nav .menu span {
 }
  
 img {
-    width: 60px;
+    width: 50px;
     border-radius: 50%;
 }
 
@@ -103,11 +103,12 @@ img {
 
 .mae {
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 
 .fase1 {
     width: 260px;
+    height: 100px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--azul3);
@@ -130,9 +131,8 @@ img {
 .fase1 .descricao {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: 2px;
     border-radius: 5px;
-    padding: 5px;
 }
 
 /* #######FIM DO ESTILO DA FASE 1 ########*/
@@ -141,6 +141,7 @@ img {
 
 .fase2 {
     width: 260px;
+    height: 100px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--azul3);
@@ -163,9 +164,8 @@ img {
 .fase2 .descricao {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: 2px;
     border-radius: 5px;
-    padding: 5px;
 }
 
 /* #######FIM DO ESTILO DA FASE 2 ########*/
@@ -174,6 +174,7 @@ img {
 
 .fase3 {
     width: 260px;
+    height: 100px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--azul3);
@@ -196,9 +197,8 @@ img {
 .fase3 .descricao {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: 2px;
     border-radius: 5px;
-    padding: 5px;
 }
 
 /* #######FIM DO ESTILO DA FASE 3 ########*/
@@ -207,6 +207,7 @@ img {
 
 .fase4 {
     width: 260px;
+    height: 100px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--azul3);
@@ -229,9 +230,8 @@ img {
 .fase4 .descricao {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: 2px;
     border-radius: 5px;
-    padding: 5px;
 }
 
 /* #######FIM DO ESTILO DA FASE 4 ########*/
@@ -240,6 +240,7 @@ img {
 
 .fase5 {
     width: 260px;
+    height: 100px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--azul3);
@@ -262,9 +263,8 @@ img {
 .fase5 .descricao {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: 2px;
     border-radius: 5px;
-    padding: 5px;
 }
 
 /* #######FIM DO ESTILO DA FASE 5 ########*/
@@ -282,8 +282,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 2px;
 }
 
 .passo1 p {
@@ -305,8 +305,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 2px;
 }
 
 .passo2 p {
@@ -328,8 +328,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 2px;
 }
 
 .passo3 p {
@@ -351,8 +351,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 2px;
 }
 
 .passo4 p {
@@ -370,16 +370,16 @@ img {
 }
 
 .passo5 i {
-    color: green;
+    color: var(--verde);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 2px;
 }
 
 .passo5 p {
-    color: blue;
+    color: var(--azul3);
     text-align: center;
 }
 
