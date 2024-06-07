@@ -273,8 +273,11 @@ img {
 /* #######INICIO DO ESTILO DO PASSO 1 ########*/
 
 .passo1{
-    height: 126px;
     display: none
+}
+
+.passo2 {
+    display: block;
 }
 
  #cart2 {
@@ -316,11 +319,6 @@ img {
 /* #######FIM DO ESTILO DO PASSO 1 ########*/
 
 /* #######INICIO DO ESTILO DO PASSO 2 ########*/
-
-.passo2{
-    height: 126px;
-    display: block;
-}
 
 .passo2 i {
     color: var(--verde);
