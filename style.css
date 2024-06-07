@@ -99,3 +99,18 @@ body {
     margin-bottom: 5px;
     margin-right: 10px;
 }
+
+/*########################################*/
+
+.um  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.um .icon {
+    font-size: 2rem;
+    color: blueviolet;
+}
+   
