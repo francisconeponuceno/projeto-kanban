@@ -11,17 +11,26 @@
     
 }
 
+:root {
+    --azul1: #020f8345;
+    --azul2: #2b6efde6;
+    --azul3: #0000ff;
+    --vermelho: #ff0000;
+    --branco: #ffffff;
+    --verde: #008000;
+
+}    
 body {
-    background-color: rgba(1, 26, 254, 0.271);
+    background-color: var(--azul1);
 }
 
 .terceiro {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: var(--vermelho);
     height: 65px;
-    color: white;
+    color: var(--branco);
     font-size: 1.5rem;
 }
 
@@ -29,7 +38,7 @@ body {
 .card {
     margin-top: 10px;
     padding: 10px;
-    background-color: rgb(43, 110, 253, 90%);
+    background-color: var(--azul2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +71,7 @@ nav .menu  {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: white;
+    color: var(--branco);
 }
 
 nav .menu div {
@@ -99,10 +108,10 @@ img {
 
 .fase1 {
     width: 260px;
-    color: white;
+    color: var(--branco);
     border-radius: 10px;
-    border: 3px solid blue;
-    background-color: white;
+    border: 3px solid var(--azul3);
+    background-color: var(--branco);
     display: flex;
     flex-direction: column;
 }
@@ -110,7 +119,7 @@ img {
 .fase1 .title {
     display: flex;
     height: 30px;
-    background-color: blue;
+    background-color: var(--azul3);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -132,10 +141,10 @@ img {
 
 .fase2 {
     width: 260px;
-    color: white;
+    color: var(--branco);
     border-radius: 10px;
-    border: 3px solid blue;
-    background-color: white;
+    border: 3px solid var(--azul3);
+    background-color: var(--branco);
     display: flex;
     flex-direction: column;
 }
@@ -143,7 +152,7 @@ img {
 .fase2 .title {
     display: flex;
     height: 30px;
-    background-color: blue;
+    background-color: var(--azul3);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -165,10 +174,10 @@ img {
 
 .fase3 {
     width: 260px;
-    color: white;
+    color: var(--branco);
     border-radius: 10px;
-    border: 3px solid blue;
-    background-color: white;
+    border: 3px solid var(--azul3);
+    background-color: var(--branco);
     display: flex;
     flex-direction: column;
 }
@@ -176,7 +185,7 @@ img {
 .fase3 .title {
     display: flex;
     height: 30px;
-    background-color: blue;
+    background-color: var(--azul3);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -198,10 +207,10 @@ img {
 
 .fase4 {
     width: 260px;
-    color: white;
+    color: var(--branco);
     border-radius: 10px;
-    border: 3px solid blue;
-    background-color: white;
+    border: 3px solid var(--azul3);
+    background-color: var(--branco);
     display: flex;
     flex-direction: column;
 }
@@ -209,7 +218,7 @@ img {
 .fase4 .title {
     display: flex;
     height: 30px;
-    background-color: blue;
+    background-color: var(--azul3);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -231,10 +240,10 @@ img {
 
 .fase5 {
     width: 260px;
-    color: white;
+    color: var(--branco);
     border-radius: 10px;
-    border: 3px solid blue;
-    background-color: white;
+    border: 3px solid var(--azul3);
+    background-color: var(--branco);
     display: flex;
     flex-direction: column;
 }
@@ -242,7 +251,7 @@ img {
 .fase5 .title {
     display: flex;
     height: 30px;
-    background-color: blue;
+    background-color: var(--azul3);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -269,7 +278,7 @@ img {
 }
 
 .passo1 i {
-    color: green;
+    color: var(--verde);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,7 +287,7 @@ img {
 }
 
 .passo1 p {
-    color: blue;
+    color: var(--azul3);
     text-align: center;
 }
 
@@ -292,7 +301,7 @@ img {
 }
 
 .passo2 i {
-    color: green;
+    color: var(--verde);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -301,7 +310,7 @@ img {
 }
 
 .passo2 p {
-    color: blue;
+    color: var(--azul3);
     text-align: center;
 }
 
@@ -315,7 +324,7 @@ img {
 }
 
 .passo3 i {
-    color: green;
+    color: var(--verde);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,7 +333,7 @@ img {
 }
 
 .passo3 p {
-    color: blue;
+    color: var(--azul3);
     text-align: center;
 }
 
@@ -338,7 +347,7 @@ img {
 }
 
 .passo4 i {
-    color: green;
+    color: var(--verde);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -347,7 +356,7 @@ img {
 }
 
 .passo4 p {
-    color: blue;
+    color: var(--azul3);
     text-align: center;
 }
 
