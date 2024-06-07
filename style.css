@@ -11,6 +11,10 @@
     
 }
 
+body {
+    background-color: rgba(1, 26, 254, 0.271);
+}
+
 .terceiro {
     display: flex;
     justify-content: center;
@@ -33,20 +37,40 @@
     gap: 5px;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
 .content {
     background-color: aqua;
     width: 100%;
+    padding: 10px;
+    
 }
 
-.content .list-menu {
+
+nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    background-color: blueviolet;
+    width: 100%;
+}
+
+nav .menu  {
+    padding-bottom: 10px;
+    display: flex;
     gap: 10px;
 }
 
-.content .list-menu li {
-    font-size: 0.8rem;
+nav .menu span {
+    font-size: 1.3rem;
+    padding-right: 10px;
+}
+ 
+img {
+    width: 60px;
+    border-radius: 50%;
 }
 
 /* #######INICIO DO ESTILO DA FASE 1 ########*/
@@ -60,7 +84,7 @@
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid maroon;
+    border: 3px solid red;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -69,7 +93,7 @@
 .fase1 .title {
     display: flex;
     height: 30px;
-    background-color: maroon;
+    background-color: red;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -87,7 +111,7 @@
 
 .fase1 .desc {
     display: flex;
-    color: maroon;
+    color: red;
     font-size: 0.8rem;
     display: none;
 }
@@ -100,7 +124,7 @@
 
 .fase1 .descricao h2 {
     font-size: 0.8rem;
-    color: maroon;
+    color: red;
     padding-top: 3px;
 }
 
@@ -110,9 +134,9 @@
 
 .fase2 {
     width: 260px;
-    color: black;
+    color: white;
     border-radius: 10px;
-    border: 3px solid yellow;
+    border: 3px solid red;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -121,7 +145,7 @@
 .fase2 .title {
     display: flex;
     height: 30px;
-    background-color: yellow;
+    background-color: red;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -139,7 +163,7 @@
 
 .fase2 .desc {
     display: flex;
-    color: black;
+    color: white;
     font-size: 0.8rem;
     display: none;
 }
@@ -152,7 +176,7 @@
 
 .fase2 .descricao h2 {
     font-size: 0.8rem;
-    color: black;
+    color: white;
     padding-top: 3px;
 }
 
@@ -164,7 +188,7 @@
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid purple;
+    border: 3px solid red;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -173,7 +197,7 @@
 .fase3 .title {
     display: flex;
     height: 30px;
-    background-color: purple;
+    background-color: red;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -191,7 +215,7 @@
 
 .fase3 .desc {
     display: flex;
-    color: purple;
+    color: red;
     font-size: 0.8rem;
     display: none;
 }
@@ -204,7 +228,7 @@
 
 .fase3 .descricao h2 {
     font-size: 0.8rem;
-    color: purple;
+    color: red;
     padding-top: 3px;
 }
 
@@ -216,7 +240,7 @@
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid orange;
+    border: 3px solid red;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -225,7 +249,7 @@
 .fase4 .title {
     display: flex;
     height: 30px;
-    background-color: orange;
+    background-color: red;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -243,7 +267,7 @@
 
 .fase4 .desc {
     display: flex;
-    color: orange;
+    color: red;
     font-size: 0.8rem;
     display: none;
 }
@@ -256,7 +280,7 @@
 
 .fase4 .descricao h2 {
     font-size: 0.8rem;
-    color: orange;
+    color: red;
     padding-top: 3px;
 }
 
@@ -268,7 +292,7 @@
     width: 260px;
     color: white;
     border-radius: 10px;
-    border: 3px solid green;
+    border: 3px solid red;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -277,7 +301,7 @@
 .fase5 .title {
     display: flex;
     height: 30px;
-    background-color: green;
+    background-color: red;
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -295,7 +319,7 @@
 
 .fase5 .desc {
     display: flex;
-    color: green;
+    color: red;
     font-size: 0.8rem;
     display: none;
 }
@@ -308,7 +332,7 @@
 
 .fase5 .descricao h2 {
     font-size: 0.8rem;
-    color: green;
+    color: red;
     padding-top: 3px;
 }
 
@@ -323,7 +347,7 @@
 }
 
 .passo1 i {
-    color: maroon;
+    color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -332,28 +356,8 @@
 }
 
 .passo1 p {
-    color: maroon;
+    color: red;
     text-align: center;
-<<<<<<< HEAD
-    margin-bottom: 5px;
-    margin-right: 10px;
-}
-
-/*########################################*/
-
-.um  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aqua;
-}
-
-.um .icon {
-    font-size: 2rem;
-    color: blueviolet;
-}
-   
-=======
 }
 
 /* #######FIM DO ESTILO DO PASSO 1 ########*/
@@ -366,7 +370,7 @@
 }
 
 .passo2 i {
-    color: black;
+    color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -375,7 +379,7 @@
 }
 
 .passo2 p {
-    color: black;
+    color: red;
     text-align: center;
 }
 
@@ -389,7 +393,7 @@
 }
 
 .passo3 i {
-    color: purple;
+    color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -398,7 +402,7 @@
 }
 
 .passo3 p {
-    color: purple;
+    color: red;
     text-align: center;
 }
 
@@ -412,7 +416,7 @@
 }
 
 .passo4 i {
-    color: orange;
+    color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -421,7 +425,7 @@
 }
 
 .passo4 p {
-    color: orange;
+    color: red;
     text-align: center;
 }
 
@@ -435,7 +439,7 @@
 }
 
 .passo5 i {
-    color: green;
+    color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -444,9 +448,8 @@
 }
 
 .passo5 p {
-    color: green;
+    color: red;
     text-align: center;
 }
 
 /* #######FIM DO ESTILO DO PASSO 5 ########*/
->>>>>>> b0ff683874737419751ad748c2ac5676d54deb8b
