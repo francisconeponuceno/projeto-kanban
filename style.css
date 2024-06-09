@@ -130,12 +130,11 @@ img {
 }
 
 .fase .passo i {
-    color: var(--vermelho);
+    color: var(--azul3);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    margin-bottom: 2px;
 }
 
 .fase .passo p {

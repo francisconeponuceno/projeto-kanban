@@ -9,8 +9,6 @@ let CUB = document.getElementById("CUB");
 
 /*VARIÁVEL DA CLASSE FASE*/
 let mae = document.querySelector('.mae');
-let fase = document.querySelector('.fase');
-
 
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
@@ -41,10 +39,10 @@ let MsgP4 = document.querySelector('#MsgP4');
 let IconP5 = document.querySelector('#IconP5');
 let MsgP5 = document.querySelector('#MsgP5');
 
-let Icones = [IconP1,IconP2,IconP3,IconP4,IconP5]
-let mensagens = [MsgP1,MsgP2,MsgP3,MsgP4,MsgP5]
-
-let AdiaCancela = 'CANCELA'
+/*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
+let Icones = [IconP1,IconP2,IconP3,IconP4,IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
+let mensagens = [MsgP1,MsgP2,MsgP3,MsgP4,MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
+let AdiaCancela = 'ADIA' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
 
 for (i = 0; i < mae.children.length; i++){
     if (AdiaCancela ==  'CANCELADO') {
@@ -58,6 +56,4 @@ for (i = 0; i < mae.children.length; i++){
         Icones[i].classList = circulo;
         mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
     }
-
-    
 }
