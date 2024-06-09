@@ -6,6 +6,16 @@ let DEST = document.getElementById("DEST");
 let CONF = document.getElementById("CONF");
 let PLACA = document.getElementById("PLACA");
 let CUB = document.getElementById("CUB");
+let Menu = [SEQ,CLT,MOT,DEST,CONF,PLACA,CUB]
+
+Menu[0].innerHTML = "1"
+Menu[1].innerHTML = "T"
+Menu[2].innerHTML = "JOAQUIM MAIA PEREIRA"
+Menu[3].innerHTML = "MARANHÃO / PARÁ / TOCANTINS"
+Menu[4].innerHTML = "FRANCISCO"
+Menu[5].innerHTML = "KBI-6155"
+Menu[6].innerHTML = "80"
+
 
 /*VARIÁVEL DA CLASSE FASE*/
 let mae = document.querySelector('.mae');
@@ -39,9 +49,11 @@ let MsgP4 = document.querySelector('#MsgP4');
 let IconP5 = document.querySelector('#IconP5');
 let MsgP5 = document.querySelector('#MsgP5');
 
+
+
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
-let Icones = [IconP1,IconP2,IconP3,IconP4,IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
-let mensagens = [MsgP1,MsgP2,MsgP3,MsgP4,MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
+let Icones = [IconP1, IconP2, IconP3, IconP4, IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
+let mensagens = [MsgP1, MsgP2, MsgP3, MsgP4, MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
 let AdiaCancela = 'ADIA' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
 
 for (i = 0; i < mae.children.length; i++){

@@ -142,6 +142,28 @@ img {
     text-align: center;
 }
 
+.noCcarregamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.noCcarregamento h1 {
+    font-size: 2rem;
+    color: var(--azul3);
+}
+
+
+footer {
+    background-color: var(--vermelho);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--branco);
+}
+
 /*ESTILO DA FASE CANCELADO*/
 .cancelado {
     width: 260px;
