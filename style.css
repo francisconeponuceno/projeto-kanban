@@ -146,7 +146,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 100%;
+    margin-bottom: 100%;
 }
 
 .noCcarregamento h1 {
@@ -156,13 +157,15 @@ img {
 
 
 footer {
-    background-color: var(--vermelho);
+    background-color: var(--azul3);
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    text-align: center;
     color: var(--branco);
+    font-size: 0.8rem;
+    padding-right: 10px;
 }
+
 
 /*ESTILO DA FASE CANCELADO*/
 .cancelado {

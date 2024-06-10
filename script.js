@@ -1,21 +1,15 @@
+let Dados = ['1', 'T', 'JOAQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
+
+const body = document.querySelector('body');
+
 /* VARIÁVEIS DO MENU*/
-let SEQ = document.getElementById("SEQ");
-let CLT = document.getElementById("CLT");
-let MOT = document.getElementById("MOT");
-let DEST = document.getElementById("DEST");
-let CONF = document.getElementById("CONF");
-let PLACA = document.getElementById("PLACA");
-let CUB = document.getElementById("CUB");
-let Menu = [SEQ,CLT,MOT,DEST,CONF,PLACA,CUB]
-
-Menu[0].innerHTML = "1"
-Menu[1].innerHTML = "T"
-Menu[2].innerHTML = "JOAQUIM MAIA PEREIRA"
-Menu[3].innerHTML = "MARANHÃO / PARÁ / TOCANTINS"
-Menu[4].innerHTML = "FRANCISCO"
-Menu[5].innerHTML = "KBI-6155"
-Menu[6].innerHTML = "80"
-
+let SEQ = document.getElementById("SEQ").innerHTML = Dados[0];
+let CLT = document.getElementById("CLT").innerHTML = Dados[1];
+let MOT = document.getElementById("MOT").innerHTML = Dados[2];
+let DEST = document.getElementById("DEST").innerHTML = Dados[3];
+let CONF = document.getElementById("CONF").innerHTML = Dados[4];
+let PLACA = document.getElementById("PLACA").innerHTML = Dados[5];
+let CUB = document.getElementById("CUB").innerHTML = Dados[6];
 
 /*VARIÁVEL DA CLASSE FASE*/
 let mae = document.querySelector('.mae');
@@ -68,4 +62,93 @@ for (i = 0; i < mae.children.length; i++){
         Icones[i].classList = circulo;
         mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
     }
+}
+
+function addCarregamento() {
+    let NovoCarregamento = document.createElement("section")
+    NovoCarregamento.classList.add('card')
+
+    NovoCarregamento.innerHTML = `
+    
+    <section class="card">
+
+        <header class="content">
+
+            <nav>
+                <div class="menu">
+                    <div><h1>SEQ</h1><span id="SEQ"></span>${Dados[0]}</div>
+                    <div><h1>CLT</h1><span id="CLT"></span>${Dados[1]}</div>
+                    <div class="motorista"><h1>MOTORISTA</h1><span id="MOT">${Dados[2]}</span></div>
+                    <div class="destino"><h1>DESTINO</h1><span id="DEST">${Dados[3]}</span></div>
+                    <div><h1>CONFERENTE</h1><span id="CONF">${Dados[4]}</span></div>
+                    <div><h1>PLACA</h1><span id="PLACA">${Dados[5]}</span></div>
+                    <div><h1>CUB</h1><span id="CUB">${Dados[6]}</span></div>
+                </div>
+            </nav>
+
+            <div class="logo">
+                <img src="img/images.jpg" alt="Não a imagem">
+            </div>
+        </header>
+
+        <div class="mae">
+
+            <div class="fase">
+                <div class="title">
+                    <h1>EM ESPERA</h1>
+                </div>
+                <div class="passo">
+                    <i class="bi bi-truck" id="IconP1"></i>
+                    <p id="MsgP1">separando mercadoria ou aguardando conferente!</p>
+                </div>
+            </div>
+
+            <div class="fase">
+                <div class="title" id="carregando">
+                    <h1>CARREGANDO</h1>
+                </div>
+                <div class="passo">
+                    <i class="bi bi-cone-striped" id="IconP2"></i>
+                    <p id="MsgP2">Opa! jaja daremos o pontapé inicial...</p>
+                </div>
+            </div>
+
+            <div class="fase">
+                <div class="title" id="aguard-faturamento">
+                    <h1>AGUARD FATURAMENTO</h1>
+                </div>
+                <div class="passo">
+                    <i class="bi bi-cone-striped" id="IconP3"></i>
+                    <p id="MsgP3">Parabéns! você avançou uma etapa do processo.</p>
+                </div>
+            </div>
+
+            <div class="fase">
+                <div class="title" id="faturando">
+                    <h1>FATURANDO</h1>
+                </div>
+                <div class="passo">
+                    <i class="bi bi-cone-striped" id="IconP4"></i>
+                    <p id="MsgP4">Parabéns! você avançou uma etapa do processo.</p>
+                </div>
+            </div>
+
+            <div class="fase">
+                <div class="title" id="concluído">
+                    <h1>CONCLUÍDO</h1>
+                </div>
+                <div class="passo">
+                    <i class="bi bi-cone-striped" id="IconP5"></i>
+                    <p id="MsgP5">Parabéns! você avançou uma etapa do processo.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    `
+    const cardbody = document.querySelector("body")
+    cardbody.append(NovoCarregamento)
 }
