@@ -64,7 +64,7 @@ for (i = 0; i < mae.children.length; i++){
     }
 }
 
-function addCarregamento(SEQ,CLT,MOT,DEST,CONF,PLACA,CUB) {
+function addCarregamento(seq,clt,mot,dest,conf,placa,cub) {
     let NovoCarregamento = document.createElement("div")
     NovoCarregamento.classList.add('.card')
 
