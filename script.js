@@ -1,6 +1,6 @@
 let Dados = ['1', 'T', 'JOAQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
-
-const body = document.querySelector('body');
+let carregamento = [];
+const body = document.querySelector('.card');
 
 /* VARIÁVEIS DO MENU*/
 let SEQ = document.getElementById("SEQ").innerHTML = Dados[0];
@@ -64,13 +64,16 @@ for (i = 0; i < mae.children.length; i++){
     }
 }
 
-function addCarregamento() {
-    let NovoCarregamento = document.createElement("section")
-    NovoCarregamento.classList.add('card')
+function addCarregamento(SEQ,CLT,MOT,DEST,CONF,PLACA,CUB) {
+    let NovoCarregamento = document.createElement("div")
+    NovoCarregamento.classList.add('.card')
 
+    carregamento.push({
+        
+    })
     NovoCarregamento.innerHTML = `
     
-    <section class="card">
+    <div class="card">
 
         <header class="content">
 
@@ -145,10 +148,10 @@ function addCarregamento() {
 
         </div>
 
-    </section>
+    </div>
 
     
     `
-    const cardbody = document.querySelector("body")
-    cardbody.append(NovoCarregamento)
+    const cardbody = document.querySelector("card")
+    cardbody.appendChild(NovoCarregamento)
 }
