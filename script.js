@@ -1,15 +1,9 @@
-let Dados = ['1', 'T', 'JOAQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
+let Dados = ['1', 'T', 'INACIO LOPES DA SILVA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
 let carregamento = [];
-const body = document.querySelector('.card');
+
 
 /* VARIÁVEIS DO MENU*/
-let SEQ = document.getElementById("SEQ").innerHTML = Dados[0];
-let CLT = document.getElementById("CLT").innerHTML = Dados[1];
-let MOT = document.getElementById("MOT").innerHTML = Dados[2];
-let DEST = document.getElementById("DEST").innerHTML = Dados[3];
-let CONF = document.getElementById("CONF").innerHTML = Dados[4];
-let PLACA = document.getElementById("PLACA").innerHTML = Dados[5];
-let CUB = document.getElementById("CUB").innerHTML = Dados[6];
+
 
 /*VARIÁVEL DA CLASSE FASE*/
 let mae = document.querySelector('.mae');
@@ -43,115 +37,131 @@ let MsgP4 = document.querySelector('#MsgP4');
 let IconP5 = document.querySelector('#IconP5');
 let MsgP5 = document.querySelector('#MsgP5');
 
-
-
-/*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
-let Icones = [IconP1, IconP2, IconP3, IconP4, IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
-let mensagens = [MsgP1, MsgP2, MsgP3, MsgP4, MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
-let AdiaCancela = 'ADIA' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
-
-for (i = 0; i < mae.children.length; i++){
-    if (AdiaCancela ==  'CANCELADO') {
-        mae.children[i].className = 'cancelado'
-        Icones[i].classList = canc;
-        mensagens[i].innerHTML = 'CANCELADO!'
-    }
-
-    if (AdiaCancela == 'ADIADO') {
-        mae.children[i].className = 'adiado'
-        Icones[i].classList = circulo;
-        mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
-    }
-}
-
 function addCarregamento(seq,clt,mot,dest,conf,placa,cub) {
-    let NovoCarregamento = document.createElement("div")
-    NovoCarregamento.classList.add('.card')
-
+    if (Dados.length < 7){
+        alert('DADOS INCOMPLETO!')
+        return
+    }
     carregamento.push({
-        
-    })
-    NovoCarregamento.innerHTML = `
+        seq,clt,mot,dest,conf,placa,cub
     
-    <div class="card">
+    })
+    
+    
+    
+}
+updateCarregamento()
+//ATUALIZAR CARREGAMENTO
+function updateCarregamento(){
+    
+    let NovoCard = document.createElement("div")
+    NovoCard.classList.add('card')
+    NovoCard.innerHTML = `
 
-        <header class="content">
+        <div class="card">
+            <header class="content">
+                <nav>
+                    <div class="menu">
+                        <div><h1>SEQ</h1><span id="SEQ"></span>${Dados[0]}</div>
+                        <div><h1>CLT</h1><span id="CLT"></span>${Dados[1]}</div>
+                        <div class="motorista"><h1>MOTORISTA</h1><span id="MOT">${Dados[2]}</span></div>
+                        <div class="destino"><h1>DESTINO</h1><span id="DEST">${Dados[3]}</span></div>
+                        <div><h1>CONFERENTE</h1><span id="CONF">${Dados[4]}</span></div>
+                        <div><h1>PLACA</h1><span id="PLACA">${Dados[5]}</span></div>
+                        <div><h1>CUB</h1><span id="CUB">${Dados[6]}</span></div>
+                    </div>
+                </nav>
 
-            <nav>
-                <div class="menu">
-                    <div><h1>SEQ</h1><span id="SEQ"></span>${Dados[0]}</div>
-                    <div><h1>CLT</h1><span id="CLT"></span>${Dados[1]}</div>
-                    <div class="motorista"><h1>MOTORISTA</h1><span id="MOT">${Dados[2]}</span></div>
-                    <div class="destino"><h1>DESTINO</h1><span id="DEST">${Dados[3]}</span></div>
-                    <div><h1>CONFERENTE</h1><span id="CONF">${Dados[4]}</span></div>
-                    <div><h1>PLACA</h1><span id="PLACA">${Dados[5]}</span></div>
-                    <div><h1>CUB</h1><span id="CUB">${Dados[6]}</span></div>
+                <div class="logo">
+                    <img src="img/images.jpg" alt="Não a imagem">
                 </div>
-            </nav>
+            </header>
 
-            <div class="logo">
-                <img src="img/images.jpg" alt="Não a imagem">
-            </div>
-        </header>
+            <div class="mae">
 
-        <div class="mae">
+                <div class="fase">
+                    <div class="title">
+                        <h1>EM ESPERA</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-truck" id="IconP1"></i>
+                        <p id="MsgP1">separando mercadoria ou aguardando conferente!</p>
+                    </div>
+                </div>
 
-            <div class="fase">
-                <div class="title">
-                    <h1>EM ESPERA</h1>
+                <div class="fase">
+                    <div class="title" id="carregando">
+                        <h1>CARREGANDO</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-cone-striped" id="IconP2"></i>
+                        <p id="MsgP2">Opa! jaja daremos o pontapé inicial...</p>
+                    </div>
                 </div>
-                <div class="passo">
-                    <i class="bi bi-truck" id="IconP1"></i>
-                    <p id="MsgP1">separando mercadoria ou aguardando conferente!</p>
-                </div>
-            </div>
 
-            <div class="fase">
-                <div class="title" id="carregando">
-                    <h1>CARREGANDO</h1>
+                <div class="fase">
+                    <div class="title" id="aguard-faturamento">
+                        <h1>AGUARD FATURAMENTO</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-cone-striped" id="IconP3"></i>
+                        <p id="MsgP3">Parabéns! você avançou uma etapa do processo.</p>
+                    </div>
                 </div>
-                <div class="passo">
-                    <i class="bi bi-cone-striped" id="IconP2"></i>
-                    <p id="MsgP2">Opa! jaja daremos o pontapé inicial...</p>
-                </div>
-            </div>
 
-            <div class="fase">
-                <div class="title" id="aguard-faturamento">
-                    <h1>AGUARD FATURAMENTO</h1>
+                <div class="fase">
+                    <div class="title" id="faturando">
+                        <h1>FATURANDO</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-cone-striped" id="IconP4"></i>
+                        <p id="MsgP4">Parabéns! você avançou uma etapa do processo.</p>
+                    </div>
                 </div>
-                <div class="passo">
-                    <i class="bi bi-cone-striped" id="IconP3"></i>
-                    <p id="MsgP3">Parabéns! você avançou uma etapa do processo.</p>
-                </div>
-            </div>
 
-            <div class="fase">
-                <div class="title" id="faturando">
-                    <h1>FATURANDO</h1>
+                <div class="fase">
+                    <div class="title" id="concluído">
+                        <h1>CONCLUÍDO</h1>
+                    </div>
+                    <div class="passo">
+                        <i class="bi bi-cone-striped" id="IconP5"></i>
+                        <p id="MsgP5">Parabéns! você avançou uma etapa do processo.</p>
+                    </div>
                 </div>
-                <div class="passo">
-                    <i class="bi bi-cone-striped" id="IconP4"></i>
-                    <p id="MsgP4">Parabéns! você avançou uma etapa do processo.</p>
-                </div>
-            </div>
 
-            <div class="fase">
-                <div class="title" id="concluído">
-                    <h1>CONCLUÍDO</h1>
-                </div>
-                <div class="passo">
-                    <i class="bi bi-cone-striped" id="IconP5"></i>
-                    <p id="MsgP5">Parabéns! você avançou uma etapa do processo.</p>
-                </div>
             </div>
 
         </div>
-
-    </div>
-
     
     `
-    const cardbody = document.querySelector("card")
-    cardbody.appendChild(NovoCarregamento)
+    const DivPrincipal = document.querySelector('.principal')
+    DivPrincipal.append(NovoCard)
+    
+    
 }
+
+
+
+/*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
+function CancelaAdia() {
+    let Icones = [IconP1, IconP2, IconP3, IconP4, IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
+    let mensagens = [MsgP1, MsgP2, MsgP3, MsgP4, MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
+    let AdiaCancela = 'CANCELA' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
+
+    for (i = 0; i < mae.children.length; i++){
+        if (AdiaCancela ==  'CANCELADO') {
+            mae.children[i].className = 'cancelado'
+            Icones[i].classList = canc;
+            mensagens[i].innerHTML = 'CANCELADO!'
+        }
+
+        if (AdiaCancela == 'ADIADO') {
+            mae.children[i].className = 'adiado'
+            Icones[i].classList = circulo;
+            mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
+        }
+    }
+}
+    
+    
+
