@@ -7,7 +7,7 @@ let ListaDeCaregamento = [];
 
 
 /*VARIÁVEL DA CLASSE FASE*/
-let mae = document.querySelector('.mae');
+
 
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
@@ -19,7 +19,7 @@ let circulo = "bi bi-arrow-repeat"
 /*VARIÁVEIS DAS FASES*/
 
 /*PASSO 1*/
-let IconP1 = document.querySelector('#IconP1');
+let IconP1 = document.getElementById('#IconP1');
 let MsgP1 = document.querySelector('#MsgP1');
 
 /*PASSO 2*/
@@ -85,7 +85,7 @@ function updateCarregamento(){
 
                 <div class="fase">
                     <div class="title">
-                        <h1>EM ESPERA</h1>
+                        <h1 onclick="CancelaAdia()">EM ESPERA</h1>
                     </div>
                     <div class="passo">
                         <i class="bi bi-truck" id="IconP1"></i>
@@ -141,7 +141,6 @@ function updateCarregamento(){
     })    
     listaCompleta.innerHTML = novaLi
     localStorage.setItem('lista', JSON.stringify(ListaDeCaregamento))
-    
 }
 
 function DeletarCarregamento(posicao){
@@ -161,28 +160,27 @@ function RecarregarCarregamento(){
 
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
 function CancelaAdia() {
+    let mae = document.querySelector('.mae')
     let Icones = [IconP1, IconP2, IconP3, IconP4, IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
     let mensagens = [MsgP1, MsgP2, MsgP3, MsgP4, MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
-    let AdiaCancela = 'ADIADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
-
+    let AdiaCancela = 'CANCELADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
     for (i = 0; i < mae.children.length; i++){
-        alert('deletou')
         if (AdiaCancela ==  'CANCELADO') {
             mae.children[i].className = 'cancelado'
             Icones[i].classList = canc;
             mensagens[i].innerHTML = 'CANCELADO!'
-            updateCarregamento()
         }
 
         if (AdiaCancela == 'ADIADO') {
             mae.children[i].className = 'adiado'
             Icones[i].classList = circulo;
             mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
-            updateCarregamento()
         }
+        
     }
+    updateCarregamento()
 }
     
 RecarregarCarregamento()
-CancelaAdia()
+
 
