@@ -144,6 +144,10 @@ function updateCarregamento(){
     
 }
 
+function RecarregarCarregamento(){
+    const CarregamentoLocalStorage = localStorage.getItem('lista')
+}
+
 
 
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
