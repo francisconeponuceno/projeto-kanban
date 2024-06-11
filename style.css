@@ -82,11 +82,15 @@ nav .menu div {
     font-size: 0.8rem;
 }
 
+nav .menu div h1 {
+    font-size: 0.9rem;
+}
+
 nav .menu .destino {
     width: 400px;
 }
 nav .menu .motorista {
-    width: 400px;
+    width: 300px;
 }
 
 nav .menu span {
@@ -130,11 +134,15 @@ img {
 }
 
 .fase .passo i {
-    color: var(--azul3);
+    color: var(--vermelho);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+}
+
+.fase #IconP1 {
+    color: var(--azul3);
 }
 
 .fase .passo p {

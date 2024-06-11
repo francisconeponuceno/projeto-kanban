@@ -1,5 +1,6 @@
-let Dados = ['1', 'T', 'INACIO LOPES DA SILVA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
-let carregamento = [];
+let Dados = ['1', 'T', 'JOAQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
+const listaCompleta = document.querySelector('.principal')
+let ListaDeCaregamento = [];
 
 
 /* VARIÁVEIS DO MENU*/
@@ -37,38 +38,41 @@ let MsgP4 = document.querySelector('#MsgP4');
 let IconP5 = document.querySelector('#IconP5');
 let MsgP5 = document.querySelector('#MsgP5');
 
-function addCarregamento(seq,clt,mot,dest,conf,placa,cub) {
+function addCarregamento() {
     if (Dados.length < 7){
         alert('DADOS INCOMPLETO!')
         return
     }
-    carregamento.push({
-        seq,clt,mot,dest,conf,placa,cub
+    ListaDeCaregamento.push({
+        seq: Dados[0],
+        clt: Dados[1],
+        mot: Dados[2],
+        dest: Dados[3],
+        conf: Dados[4],
+        placa: Dados[5],
+        cub: Dados[6]
     
     })
-    
-    
-    
+    updateCarregamento()
 }
-updateCarregamento()
+
 //ATUALIZAR CARREGAMENTO
 function updateCarregamento(){
-    
-    let NovoCard = document.createElement("div")
-    NovoCard.classList.add('card')
-    NovoCard.innerHTML = `
+    let novaLi = ''
+    ListaDeCaregamento.forEach((item,posicao) => {
+        novaLi = novaLi + `
 
         <div class="card">
             <header class="content">
                 <nav>
                     <div class="menu">
-                        <div><h1>SEQ</h1><span id="SEQ"></span>${Dados[0]}</div>
-                        <div><h1>CLT</h1><span id="CLT"></span>${Dados[1]}</div>
-                        <div class="motorista"><h1>MOTORISTA</h1><span id="MOT">${Dados[2]}</span></div>
-                        <div class="destino"><h1>DESTINO</h1><span id="DEST">${Dados[3]}</span></div>
-                        <div><h1>CONFERENTE</h1><span id="CONF">${Dados[4]}</span></div>
-                        <div><h1>PLACA</h1><span id="PLACA">${Dados[5]}</span></div>
-                        <div><h1>CUB</h1><span id="CUB">${Dados[6]}</span></div>
+                        <div><h1>SEQ</h1><span id="SEQ"></span>${item.seq}</div>
+                        <div><h1>CLT</h1><span id="CLT"></span>${item.clt}</div>
+                        <div class="motorista"><h1>MOTORISTA</h1><span id="MOT">${item.mot}</span></div>
+                        <div class="destino"><h1>DESTINO</h1><span id="DEST">${item.dest}</span></div>
+                        <div><h1>CONFERENTE</h1><span id="CONF">${item.conf}</span></div>
+                        <div><h1>PLACA</h1><span id="PLACA">${item.placa}</span></div>
+                        <div><h1>CUB</h1><span id="CUB">${item.cub}</span></div>
                     </div>
                 </nav>
 
@@ -133,10 +137,10 @@ function updateCarregamento(){
 
         </div>
     
-    `
-    const DivPrincipal = document.querySelector('.principal')
-    DivPrincipal.append(NovoCard)
-    
+        `
+    })    
+    listaCompleta.innerHTML = novaLi
+    localStorage.setItem('lista', JSON.stringify(ListaDeCaregamento))
     
 }
 
