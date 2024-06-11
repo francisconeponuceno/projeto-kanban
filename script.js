@@ -1,4 +1,4 @@
-let Dados = ['1', 'T', 'JOAQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
+let Dados = ['1', 'T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
 
@@ -77,7 +77,7 @@ function updateCarregamento(){
                 </nav>
 
                 <div class="logo">
-                    <img src="img/images.jpg" alt="Não a imagem">
+                    <img src="img/images.jpg" alt="Não a imagem" onclick="DeletarCarregamento(${posicao})">
                 </div>
             </header>
 
@@ -144,8 +144,17 @@ function updateCarregamento(){
     
 }
 
+function DeletarCarregamento(posicao){
+    ListaDeCaregamento.splice(posicao, 1)
+    updateCarregamento()
+}
+
 function RecarregarCarregamento(){
     const CarregamentoLocalStorage = localStorage.getItem('lista')
+    if (CarregamentoLocalStorage) {
+        ListaDeCaregamento = JSON.parse(CarregamentoLocalStorage)
+    }
+    updateCarregamento()
 }
 
 
@@ -154,22 +163,26 @@ function RecarregarCarregamento(){
 function CancelaAdia() {
     let Icones = [IconP1, IconP2, IconP3, IconP4, IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
     let mensagens = [MsgP1, MsgP2, MsgP3, MsgP4, MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
-    let AdiaCancela = 'CANCELA' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
+    let AdiaCancela = 'ADIADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
 
     for (i = 0; i < mae.children.length; i++){
+        alert('deletou')
         if (AdiaCancela ==  'CANCELADO') {
             mae.children[i].className = 'cancelado'
             Icones[i].classList = canc;
             mensagens[i].innerHTML = 'CANCELADO!'
+            updateCarregamento()
         }
 
         if (AdiaCancela == 'ADIADO') {
             mae.children[i].className = 'adiado'
             Icones[i].classList = circulo;
             mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
+            updateCarregamento()
         }
     }
 }
     
-    
+RecarregarCarregamento()
+CancelaAdia()
 
