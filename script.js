@@ -2,10 +2,6 @@ let Dados = ['1', 'T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS', 
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
 
-
-/* VARIÁVEIS DO MENU*/
-
-
 /*VARIÁVEL DA CLASSE FASE*/
 
 
@@ -19,24 +15,19 @@ let circulo = "bi bi-arrow-repeat"
 /*VARIÁVEIS DAS FASES*/
 
 /*PASSO 1*/
-let IconP1 = document.getElementById('#IconP1');
-let MsgP1 = document.querySelector('#MsgP1');
+
 
 /*PASSO 2*/
-let IconP2 = document.querySelector('#IconP2');
-let MsgP2 = document.querySelector('#MsgP2');
+
 
 /*PASSO 3*/
-let IconP3 = document.querySelector('#IconP3');
-let MsgP3 = document.querySelector('#MsgP3');
+
 
 /*PASSO 4*/
-let IconP4 = document.querySelector('#IconP4');
-let MsgP4 = document.querySelector('#MsgP4');
+
 
 /*PASSO 5*/
-let IconP5 = document.querySelector('#IconP5');
-let MsgP5 = document.querySelector('#MsgP5');
+
 
 function addCarregamento() {
     if (Dados.length < 7){
@@ -158,9 +149,21 @@ function RecarregarCarregamento(){
 
 
 
+let MsgP5 = document.querySelector('#MsgP5');
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
 function CancelaAdia() {
     let mae = document.querySelector('.mae')
+    let IconP1 = document.querySelector('#IconP1');
+    let MsgP1 = document.querySelector('#MsgP1');
+    let IconP2 = document.querySelector('#IconP2');
+    let MsgP2 = document.querySelector('#MsgP2');
+    let IconP3 = document.querySelector('#IconP3');
+    let MsgP3 = document.querySelector('#MsgP3');
+    let IconP4 = document.querySelector('#IconP4');
+    let MsgP4 = document.querySelector('#MsgP4');
+    let IconP5 = document.querySelector('#IconP5');
+    let MsgP5 = document.querySelector('#MsgP5');
+    
     let Icones = [IconP1, IconP2, IconP3, IconP4, IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
     let mensagens = [MsgP1, MsgP2, MsgP3, MsgP4, MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
     let AdiaCancela = 'CANCELADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
