@@ -1,9 +1,23 @@
-let Dados = ['1', 'T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
+import sqlite3 from 'sqlite3';
+import { open } from 'sqlite';
+let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
+
+async function criaTabela(){
+    const db = await open({
+        filename: './bancokanban.db',
+        driver: sqlite3.Database,
+    });
+    db.run(`INSERT INTO carregamento VALUES ('1','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80' `);
+}
+
+criaTabela();
+    
+
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
 
 /*VARIÁVEL DA CLASSE FASE*/
-
+ 
 
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
@@ -120,7 +134,7 @@ function updateCarregamento(){
                     </div>
                     <div class="passo">
                         <i class="bi bi-cone-striped" id="IconP5"></i>
-                        <p id="MsgP5">Parabéns! você avançou uma etapa do processo.</p>
+                        <p class="MsgP5">Parabéns! você avançou uma etapa do processo.</p>
                     </div>
                 </div>
 
@@ -149,7 +163,7 @@ function RecarregarCarregamento(){
 
 
 
-let MsgP5 = document.querySelector('#MsgP5');
+let MsgP5 = document.querySelector('.MsgP5');
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
 function CancelaAdia() {
     let mae = document.querySelector('.mae')
@@ -162,7 +176,6 @@ function CancelaAdia() {
     let IconP4 = document.querySelector('#IconP4');
     let MsgP4 = document.querySelector('#MsgP4');
     let IconP5 = document.querySelector('#IconP5');
-    let MsgP5 = document.querySelector('#MsgP5');
     
     let Icones = [IconP1, IconP2, IconP3, IconP4, IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
     let mensagens = [MsgP1, MsgP2, MsgP3, MsgP4, MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
