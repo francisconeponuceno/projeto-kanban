@@ -1,22 +1,30 @@
-import sqlite3 from 'sqlite3';
-import  {open}  from 'sqlite';
-let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 
- async function salvar(){
+
+
+
+
     
-    const db = await open({
-        filename: './bancokanban.db',
-        driver: sqlite3.Database,
-    });
+function salvar(){
+    
+    let sqlite3 = require('sqlite3').verbose();
     alert('dados salvo')
-    db.run("INSERT INTO carregamento (CLT, MOT, DEST, CONF, PLACA, CUB) VALUES ('T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80') ")
-    
+    let db = new sqlite3.Database('bancokanban.db');
+    let check;
+    db.serialize(function(){
+        db.prepare("INSERT INTO carregamento (CLT,MOT,DEST,CONF,PLACA,CUB) VALUES ('T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80')")
+        
+    });
+        
+    db.close();
 }
-    
-
-
 
     
+
+
+
+    
+
+let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
