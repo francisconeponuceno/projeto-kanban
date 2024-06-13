@@ -1,16 +1,21 @@
 import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
-let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80']
+import  {open}  from 'sqlite';
+let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 
-async function criaTabela(){
+ async function salvar(){
+    
     const db = await open({
         filename: './bancokanban.db',
         driver: sqlite3.Database,
     });
-    db.run(`INSERT INTO carregamento VALUES ('1','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80' `);
+    alert('dados salvo')
+    db.run("INSERT INTO carregamento (CLT, MOT, DEST, CONF, PLACA, CUB) VALUES ('T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80') ")
+    
 }
+    
 
-criaTabela();
+
+
     
 
 const listaCompleta = document.querySelector('.principal')
@@ -44,7 +49,7 @@ let circulo = "bi bi-arrow-repeat"
 
 
 function addCarregamento() {
-    if (Dados.length < 7){
+    if (Dados.length < 6){
         alert('DADOS INCOMPLETO!')
         return
     }
@@ -100,7 +105,7 @@ function updateCarregamento(){
 
                 <div class="fase">
                     <div class="title" id="carregando">
-                        <h1>CARREGANDO</h1>
+                        <h1 onclick="salvar()">CARREGANDO</h1>
                     </div>
                     <div class="passo">
                         <i class="bi bi-cone-striped" id="IconP2"></i>
