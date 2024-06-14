@@ -1,18 +1,16 @@
-import sqlite3 from "sqlite3";
+import sqlite3 from 'sqlite3';
+import { open } from 'sqlite';
 
 
-
-    
-
-    let sqlite3 = require('sqlite3').verbose();
-    alert('dados salvo')
-    let db = new sqlite3.Database('bancokanban.db');
-    let check;
-    db.serialize(function(){
-        db.prepare("INSERT INTO carregamento (CLT,MOT,DEST,CONF,PLACA,CUB) VALUES ('T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80')")
-        
+    function criarBanco() {
+    const db = open({
+        filename: './banco.db',
+        driver: sqlite3.Database,
     });
-        
-    db.close();
+
+    db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER) VALUES ('T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80')");
+}
+
+criarBanco();
 
     
