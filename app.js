@@ -14,3 +14,5 @@ import sqlite3 from "sqlite3";
     });
         
     db.close();
+
+    
