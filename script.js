@@ -14,16 +14,12 @@ function criarBanco(){
 }
 
 
-    
-
-
-
 let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
 
-/*VARIÁVEL DA CLASSE FASE*/
+
  
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
@@ -175,29 +171,35 @@ function CancelaAdia() {
     for (i = 0; i < mae.children.length; i++){
         if (AdiaCancela ==  'CANCELADO') {
             mae.children[i].className = 'cancelado'
-            Icones[i].classList = canc;
+            mae.children[i].children[1].children[0].classList = CHEKOK
+            mae.children[i].children[1].children[1].innerText = 'ola mundo'
             mensagens[i].innerHTML = 'CANCELADO!'
+            
         }
 
         if (AdiaCancela == 'ADIADO') {
             mae.children[i].className = 'adiado'
             Icones[i].classList = circulo;
             mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
+            document.querySelector('.MsgP5').innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
         }
         
     }
     updateCarregamento()
 }
-    
+
 
 let cubagem = 0
 function primeiroPasso(){
-    if (cubagem >= 80){
+    if (cubagem >= Dados[5]){
         alert('proxima fase')
+        RecarregarCarregamento()
     }
     else{
         alert('continua na mesma fase')
+        RecarregarCarregamento()
     }
 }
-
 RecarregarCarregamento()
+let mae = document.querySelector('.mae')
+console.log(mae)
