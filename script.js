@@ -1,6 +1,17 @@
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database('banco.db');
+var check;
 
 
 
+db.serialize(function(){
+    
+    
+    alert('blz')
+    db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER");
+
+
+});
 
     
 
@@ -95,7 +106,7 @@ function updateCarregamento(){
 
                 <div class="fase">
                     <div class="title" id="carregando">
-                        <h1 onclick="salvar()">CARREGANDO</h1>
+                        <h1 onclick="criarBanco()">CARREGANDO</h1>
                     </div>
                     <div class="passo">
                         <i class="bi bi-cone-striped" id="IconP2"></i>
