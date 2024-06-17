@@ -1,17 +1,18 @@
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('banco.db');
-var check;
 
 
-
-db.serialize(function(){
+function criarBanco(){
     
-    
+    var sqlite3 = require('sqlite3').verbose();
+    var db = new sqlite3.Database('banco2.db');
+    var check;
     alert('blz')
+    db.serialize(function(){
+    
     db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER");
 
-
 });
+}
+
 
     
 
@@ -24,7 +25,6 @@ let ListaDeCaregamento = [];
 
 /*VARIÁVEL DA CLASSE FASE*/
  
-
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
 let CONE = "bi bi-cone-striped"
@@ -32,21 +32,7 @@ let CHEKOK = "bi bi-check2-circle"
 let canc = "bi bi-x-circle-fill"
 let circulo = "bi bi-arrow-repeat"
 
-/*VARIÁVEIS DAS FASES*/
 
-/*PASSO 1*/
-
-
-/*PASSO 2*/
-
-
-/*PASSO 3*/
-
-
-/*PASSO 4*/
-
-
-/*PASSO 5*/
 
 
 function addCarregamento() {
@@ -116,7 +102,7 @@ function updateCarregamento(){
 
                 <div class="fase">
                     <div class="title" id="aguard-faturamento">
-                        <h1>AGUARD FATURAMENTO</h1>
+                        <h1 onclick="primeiroPasso()">AGUARD FATURAMENTO</h1>
                     </div>
                     <div class="passo">
                         <i class="bi bi-cone-striped" id="IconP3"></i>
@@ -203,6 +189,15 @@ function CancelaAdia() {
     updateCarregamento()
 }
     
+
+let cubagem = 0
+function primeiroPasso(){
+    if (cubagem >= 80){
+        alert('proxima fase')
+    }
+    else{
+        alert('continua na mesma fase')
+    }
+}
+
 RecarregarCarregamento()
-
-
