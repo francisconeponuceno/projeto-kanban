@@ -4,14 +4,10 @@
 
 
 
-let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
-
+let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
-
-/*VARIÁVEL DA CLASSE FASE*/
  
-
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
 let CONE = "bi bi-cone-striped"
@@ -19,25 +15,9 @@ let CHEKOK = "bi bi-check2-circle"
 let canc = "bi bi-x-circle-fill"
 let circulo = "bi bi-arrow-repeat"
 
-/*VARIÁVEIS DAS FASES*/
-
-/*PASSO 1*/
-
-
-/*PASSO 2*/
-
-
-/*PASSO 3*/
-
-
-/*PASSO 4*/
-
-
-/*PASSO 5*/
-
-
+/*FUNÇÃO PARA ADICIONAR UM CARREGAMENTO*/
 function addCarregamento() {
-    if (Dados.length < 6){
+    if (Dados.length < 7){
         alert('DADOS INCOMPLETO!')
         return
     }
@@ -64,7 +44,7 @@ function updateCarregamento(){
             <header class="content">
                 <nav>
                     <div class="menu">
-                        <div><h1>SEQ</h1><span id="SEQ"></span>${item.seq}</div>
+                        <div><h1>SEQ</h1><span id="SEQ"></span>${posicao + 1}</div>
                         <div><h1>CLT</h1><span id="CLT"></span>${item.clt}</div>
                         <div class="motorista"><h1>MOTORISTA</h1><span id="MOT">${item.mot}</span></div>
                         <div class="destino"><h1>DESTINO</h1><span id="DEST">${item.dest}</span></div>
@@ -154,38 +134,24 @@ function RecarregarCarregamento(){
     updateCarregamento()
 }
 
-
-
-let MsgP5 = document.querySelector('.MsgP5');
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
+
+let mae = document.querySelector('.mae')
 function CancelaAdia() {
-    let mae = document.querySelector('.mae')
-    let IconP1 = document.querySelector('#IconP1');
-    let MsgP1 = document.querySelector('#MsgP1');
-    let IconP2 = document.querySelector('#IconP2');
-    let MsgP2 = document.querySelector('#MsgP2');
-    let IconP3 = document.querySelector('#IconP3');
-    let MsgP3 = document.querySelector('#MsgP3');
-    let IconP4 = document.querySelector('#IconP4');
-    let MsgP4 = document.querySelector('#MsgP4');
-    let IconP5 = document.querySelector('#IconP5');
+    updateCarregamento()
     
-    let Icones = [IconP1, IconP2, IconP3, IconP4, IconP5] /*ARREY COM OS ÍCONE DE CADA CARD*/
-    let mensagens = [MsgP1, MsgP2, MsgP3, MsgP4, MsgP5] /*ARREY COM AS MENSAGENS DE CADA CARD*/
-    let AdiaCancela = 'CANCELADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
-    for (i = 0; i < mae.children.length; i++){
+    let mae = listaCompleta.children[1].children[1]
+    let AdiaCancela = 'ADIADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
+    for (i = 0; i < mae.children.length + 1; i++){
         if (AdiaCancela ==  'CANCELADO') {
             mae.children[i].className = 'cancelado'
-            mae.children[i].children[1].children[0].classList = CHEKOK
-            mensagens[i].innerHTML = 'CANCELADO!'
-            mae.children[i].children[1].children[1].innerHTML = "ola mundo"
-            
+            mae.children[i].children[1].children[0].classList = canc
+            mae.children[i].children[1].children[1].innerHTML = "CANCELADO!"     
         }
-
         if (AdiaCancela == 'ADIADO') {
             mae.children[i].className = 'adiado'
-            Icones[i].classList = circulo;
-            mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
+            mae.children[i].children[1].children[0].classList = circulo
+            mae.children[i].children[1].children[1].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'   
         }
         
     }
@@ -193,5 +159,5 @@ function CancelaAdia() {
 }
 
 RecarregarCarregamento()
-let mae = document.querySelector('.mae')
-console.log(mae)
+console.log(listaCompleta.children[1].children[1])
+
