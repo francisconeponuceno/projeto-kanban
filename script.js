@@ -1,17 +1,20 @@
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database('banco.db');
+var check;
 
 
-function criarBanco(){
+
+db.serialize(function(){
     
-    var sqlite3 = require('sqlite3').verbose();
-    var db = new sqlite3.Database('banco2.db');
-    var check;
+    
     alert('blz')
-    db.serialize(function(){
-    
     db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER");
 
+
 });
-}
+
+    
+
 
 
 let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
@@ -19,8 +22,9 @@ let Dados = ['T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRA
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
 
-
+/*VARIÁVEL DA CLASSE FASE*/
  
+
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
 let CONE = "bi bi-cone-striped"
@@ -28,7 +32,21 @@ let CHEKOK = "bi bi-check2-circle"
 let canc = "bi bi-x-circle-fill"
 let circulo = "bi bi-arrow-repeat"
 
+/*VARIÁVEIS DAS FASES*/
 
+/*PASSO 1*/
+
+
+/*PASSO 2*/
+
+
+/*PASSO 3*/
+
+
+/*PASSO 4*/
+
+
+/*PASSO 5*/
 
 
 function addCarregamento() {
@@ -98,7 +116,7 @@ function updateCarregamento(){
 
                 <div class="fase">
                     <div class="title" id="aguard-faturamento">
-                        <h1 onclick="primeiroPasso()">AGUARD FATURAMENTO</h1>
+                        <h1>AGUARD FATURAMENTO</h1>
                     </div>
                     <div class="passo">
                         <i class="bi bi-cone-striped" id="IconP3"></i>
@@ -171,35 +189,20 @@ function CancelaAdia() {
     for (i = 0; i < mae.children.length; i++){
         if (AdiaCancela ==  'CANCELADO') {
             mae.children[i].className = 'cancelado'
-            mae.children[i].children[1].children[0].classList = CHEKOK
-            mae.children[i].children[1].children[1].innerText = 'ola mundo'
+            Icones[i].classList = canc;
             mensagens[i].innerHTML = 'CANCELADO!'
-            
         }
 
         if (AdiaCancela == 'ADIADO') {
             mae.children[i].className = 'adiado'
             Icones[i].classList = circulo;
             mensagens[i].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
-            document.querySelector('.MsgP5').innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'
         }
         
     }
     updateCarregamento()
 }
-
-
-let cubagem = 0
-function primeiroPasso(){
-    if (cubagem >= Dados[5]){
-        alert('proxima fase')
-        RecarregarCarregamento()
-    }
-    else{
-        alert('continua na mesma fase')
-        RecarregarCarregamento()
-    }
-}
+    
 RecarregarCarregamento()
-let mae = document.querySelector('.mae')
-console.log(mae)
+
+
