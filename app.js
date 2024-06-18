@@ -13,4 +13,16 @@ import { open } from 'sqlite';
     db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER) VALUES ('T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80')");
 }
 
+
+
 criarBanco();
+
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database('banco.db');
+var check;
+
+db.serialize(function(){
+    
+    alert('blz')
+    db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER");
+});

@@ -1,17 +1,4 @@
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('banco.db');
-var check;
 
-
-
-db.serialize(function(){
-    
-    
-    alert('blz')
-    db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER");
-
-
-});
 
     
 
@@ -189,7 +176,8 @@ function CancelaAdia() {
     for (i = 0; i < mae.children.length; i++){
         if (AdiaCancela ==  'CANCELADO') {
             mae.children[i].className = 'cancelado'
-            Icones[i].classList = canc;
+            mae.children[i].children[1].children[0].classList = CHEKOK
+            mae.children[i].children[1].children[1].innerHTML = 'ok'
             mensagens[i].innerHTML = 'CANCELADO!'
         }
 
