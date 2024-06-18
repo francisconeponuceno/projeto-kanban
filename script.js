@@ -177,8 +177,9 @@ function CancelaAdia() {
         if (AdiaCancela ==  'CANCELADO') {
             mae.children[i].className = 'cancelado'
             mae.children[i].children[1].children[0].classList = CHEKOK
-            mae.children[i].children[1].children[1].innerHTML = 'ok'
             mensagens[i].innerHTML = 'CANCELADO!'
+            mae.children[i].children[1].children[1].innerHTML = "ola mundo"
+            
         }
 
         if (AdiaCancela == 'ADIADO') {
@@ -190,7 +191,7 @@ function CancelaAdia() {
     }
     updateCarregamento()
 }
-    
+
 RecarregarCarregamento()
-
-
+let mae = document.querySelector('.mae')
+console.log(mae)
