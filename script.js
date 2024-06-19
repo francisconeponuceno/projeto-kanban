@@ -1,9 +1,5 @@
 
 
-    
-
-
-
 let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
@@ -63,7 +59,7 @@ function updateCarregamento(){
 
                 <div class="fase">
                     <div class="title">
-                        <h1 onclick="CancelaAdia()">EM ESPERA</h1>
+                        <h1 onclick="CancelaAdia(${posicao})">EM ESPERA</h1>
                     </div>
                     <div class="passo">
                         <i class="bi bi-truck" id="IconP1"></i>
@@ -135,13 +131,10 @@ function RecarregarCarregamento(){
 }
 
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
-
-let mae = document.querySelector('.mae')
-function CancelaAdia() {
-    updateCarregamento()
+function CancelaAdia(posicao) {
     
-    let mae = listaCompleta.children[1].children[1]
-    let AdiaCancela = 'ADIADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
+    let AdiaCancela = 'CONCLUÍDO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
+    let mae = listaCompleta.children[posicao].children[1]
     for (i = 0; i < mae.children.length + 1; i++){
         if (AdiaCancela ==  'CANCELADO') {
             mae.children[i].className = 'cancelado'
@@ -151,13 +144,20 @@ function CancelaAdia() {
         if (AdiaCancela == 'ADIADO') {
             mae.children[i].className = 'adiado'
             mae.children[i].children[1].children[0].classList = circulo
-            mae.children[i].children[1].children[1].innerHTML = 'INICIOU HOJE, TERMINARÁ AMANHÁ!'   
+            mae.children[i].children[1].children[1].innerHTML = 'ADIADO!'   
+        }
+        if (AdiaCancela == 'CONCLUÍDO') {
+            mae.children[i].className = 'concluido'
+            mae.children[i].children[1].children[0].classList = CHEKOK
+            mae.children[i].children[1].children[1].innerHTML = 'CONCLUÍDO!'   
         }
         
     }
-    updateCarregamento()
+    
 }
 
 RecarregarCarregamento()
-console.log(listaCompleta.children[1].children[1])
+
+
+
 
