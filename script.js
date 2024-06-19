@@ -4,6 +4,8 @@ let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  '
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
  
+const NoCarregamento = document.querySelector('.noCcarregamento')
+
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
 let CONE = "bi bi-cone-striped"
@@ -28,7 +30,15 @@ function addCarregamento() {
     
     })
     updateCarregamento()
+
+    if (ListaDeCaregamento != []){
+        updateCarregamento()
+        NoCarregamento.innerHTML = '';
+        
+    }
 }
+
+
 
 //ATUALIZAR CARREGAMENTO
 function updateCarregamento(){
@@ -155,6 +165,8 @@ function CancelaAdia(posicao) {
     }
     
 }
+
+
 
 RecarregarCarregamento()
 
