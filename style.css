@@ -15,6 +15,7 @@
     --azul2: #4881fce6;
     --azul3: #0000ff;
     --vermelho: #ff0000;
+    --vermelho2: #fc5555;
     --branco: #ffffff;
     --verde: #008000;
     --amarelo: #ffa500;
@@ -34,8 +35,15 @@ body {
     font-size: 1.5rem;
 }
 
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .card {
-    
+    width: 1120px;
     padding: 10px;
     background-color: var(--azul2);
     display: flex;
@@ -43,7 +51,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    margin: 20px 20px 20px 20px;
+    margin: 10px 20px 10px 20px;
     border-radius: 10px;
 }
 
@@ -54,7 +62,7 @@ header{
 }
 
 .content {
-    width: 100%;
+    width: 1100px;
     padding: 3px;
     border: 2px solid var(--branco);
     border-radius: 5px;
@@ -109,6 +117,7 @@ img {
 /* ####### ESTILO DAS FASES  ########*/
 
 .mae {
+    width: 1100px;
     display: flex;
     gap: 5px;
 }
@@ -222,7 +231,7 @@ footer {
     height: 100px;
     color: var(--branco);
     border-radius: 10px;
-    border: 3px solid var(--vermelho);
+    border: 3px solid var(--vermelho2);
     background-color: var(--branco);
     display: flex;
     flex-direction: column;
@@ -231,7 +240,7 @@ footer {
 .cancelado .title {
     display: flex;
     height: 30px;
-    background-color: var(--vermelho);
+    background-color: var(--vermelho2);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
@@ -241,7 +250,7 @@ footer {
 }
 
 .cancelado .passo i {
-    color: var(--vermelho);
+    color: var(--vermelho2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,7 +259,7 @@ footer {
 }
 
 .cancelado .passo p {
-    color: var(--vermelho);
+    color: var(--vermelho2);
     text-align: center;
 }
 
