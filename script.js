@@ -12,6 +12,9 @@ let CHEKOK = "bi bi-check2-circle"
 let canc = "bi bi-x-circle-fill"
 let circulo = "bi bi-arrow-repeat"
 
+let ClasseFase = 'fase'
+
+
 /*FUNÇÃO PARA ADICIONAR UM CARREGAMENTO*/
 function addCarregamento() {
     if (Dados.length < 7){
@@ -32,6 +35,7 @@ function addCarregamento() {
 
 //ATUALIZAR CARREGAMENTO
 function updateCarregamento(){
+    
     let novaLi = ''
     ListaDeCaregamento.forEach((item,posicao) => {
         novaLi = novaLi + `
@@ -57,7 +61,7 @@ function updateCarregamento(){
 
             <div class="mae">
 
-                <div class="fase">
+                <div class="${ClasseFase}">
                     <div class="title">
                         <h1 onclick="CancelaAdia(${posicao})">EM ESPERA</h1>
                     </div>
@@ -112,11 +116,11 @@ function updateCarregamento(){
         </div>
     
         `
-    })    
+    })   
     listaCompleta.innerHTML = novaLi
     localStorage.setItem('lista', JSON.stringify(ListaDeCaregamento))
     SemCarregamento()
-    CancelaAdia(posicao)
+    
 }
 
 function DeletarCarregamento(posicao){
@@ -129,7 +133,9 @@ function RecarregarCarregamento(){
     if (CarregamentoLocalStorage) {
         ListaDeCaregamento = JSON.parse(CarregamentoLocalStorage)
     }
+    
     updateCarregamento()
+    
 }
 
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
@@ -138,7 +144,8 @@ function CancelaAdia(posicao) {
     let mae = listaCompleta.children[posicao].children[1]
     for (i = 0; i < mae.children.length + 1; i++){
         if (AdiaCancela ==  'CANCELADO') {
-            mae.children[i].className = 'cancelado'
+            mae.children[i].classList.remove('fase')
+            mae.children[i].classList.add('cancelado')
             mae.children[i].children[1].children[0].classList = canc
             mae.children[i].children[1].children[1].innerHTML = "CANCELADO!"     
         }
@@ -151,7 +158,8 @@ function CancelaAdia(posicao) {
             mae.children[i].className = 'concluido'
             mae.children[i].children[1].children[0].classList = CHEKOK
             mae.children[i].children[1].children[1].innerHTML = 'CONCLUÍDO!'   
-        } 
+        }
+        
     }
 }
 
