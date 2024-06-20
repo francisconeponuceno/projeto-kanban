@@ -3,8 +3,7 @@
 let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal')
 let ListaDeCaregamento = [];
- 
-const NoCarregamento = document.querySelector('.noCcarregamento')
+const NoCarregamento = document.querySelector('.TextVasio')
 
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
@@ -27,18 +26,9 @@ function addCarregamento() {
         conf: Dados[4],
         placa: Dados[5],
         cub: Dados[6]
-    
     })
     updateCarregamento()
-
-    if (ListaDeCaregamento != []){
-        updateCarregamento()
-        NoCarregamento.innerHTML = '';
-        
-    }
 }
-
-
 
 //ATUALIZAR CARREGAMENTO
 function updateCarregamento(){
@@ -125,6 +115,8 @@ function updateCarregamento(){
     })    
     listaCompleta.innerHTML = novaLi
     localStorage.setItem('lista', JSON.stringify(ListaDeCaregamento))
+    SemCarregamento()
+    CancelaAdia(posicao)
 }
 
 function DeletarCarregamento(posicao){
@@ -142,7 +134,6 @@ function RecarregarCarregamento(){
 
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
 function CancelaAdia(posicao) {
-    
     let AdiaCancela = 'CANCELADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
     let mae = listaCompleta.children[posicao].children[1]
     for (i = 0; i < mae.children.length + 1; i++){
@@ -160,16 +151,18 @@ function CancelaAdia(posicao) {
             mae.children[i].className = 'concluido'
             mae.children[i].children[1].children[0].classList = CHEKOK
             mae.children[i].children[1].children[1].innerHTML = 'CONCLUÍDO!'   
-        }
-        
+        } 
     }
-    
 }
 
+ function SemCarregamento(){
+    if (ListaDeCaregamento != ''){
+        NoCarregamento.innerHTML = ''; 
+    }
+    if (ListaDeCaregamento == ''){
+        NoCarregamento.innerHTML = 'NÃO À CARREGAMENTO NESSE MOMENTO!!!'; 
+    }
+ }
 
-
-RecarregarCarregamento()
-
-
-
+ RecarregarCarregamento()
 
