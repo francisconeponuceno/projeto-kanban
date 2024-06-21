@@ -63,10 +63,11 @@ header{
 
 .content {
     width: 1100px;
+    height: 55px;
     padding: 3px;
     border: 2px solid var(--branco);
     border-radius: 5px;
-    gap: 5px;
+    gap: 10px;
 }
 
 
@@ -75,8 +76,7 @@ nav {
     flex-direction: column;
     width: 100%;
     margin: auto;
-    margin-right: 10px;
-    
+    margin-right: 5px;
 }
 
 nav .menu  {
@@ -113,7 +113,7 @@ nav .menu span {
 }
  
 img {
-    width: 50px;
+    width: 45px;
     border-radius: 50%;
 }
 
@@ -127,7 +127,7 @@ img {
 
 .fase {
     width: 253px;
-    height: 100px;
+    height: 85px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--azul3);
@@ -138,13 +138,13 @@ img {
 
 .fase .title {
     display: flex;
-    height: 30px;
+    height: 15px;
     background-color: var(--azul3);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     margin-bottom: 3px;
 }
 
@@ -153,7 +153,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .fase #IconP1 {
@@ -163,6 +163,7 @@ img {
 .fase .passo p {
     color: var(--azul3);
     text-align: center;
+    font-size: 0.9rem;
 }
 
 /* SECTION NÃO CARREGAMENTO*/
@@ -194,7 +195,7 @@ footer {
 /*ESTILO DA FASE CONCLUÍDO*/
 .concluido {
     width: 253px;
-    height: 100px;
+    height: 85px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--verde);
@@ -205,13 +206,13 @@ footer {
 
 .concluido .title {
     display: flex;
-    height: 30px;
+    height: 15px;
     background-color: var(--verde);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     margin-bottom: 3px;
 }
 
@@ -220,19 +221,20 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 2px;
 }
 
 .concluido .passo p {
     color: var(--verde);
     text-align: center;
+    font-size: 0.9rem;
 }
 
 /*ESTILO DA FASE CANCELADO*/
 .cancelado {
     width: 253px;
-    height: 100px;
+    height: 85px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--vermelho2);
@@ -243,13 +245,13 @@ footer {
 
 .cancelado .title {
     display: flex;
-    height: 30px;
+    height: 15px;
     background-color: var(--vermelho2);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     margin-bottom: 3px;
 }
 
@@ -258,19 +260,20 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 2px;
 }
 
 .cancelado .passo p {
     color: var(--vermelho2);
     text-align: center;
+    font-size: 0.9rem;
 }
 
 /*ESTILO DA FASE ADIADO*/
 .adiado {
     width: 253px;
-    height: 100px;
+    height: 85px;
     color: var(--branco);
     border-radius: 10px;
     border: 3px solid var(--amarelo);
@@ -281,13 +284,13 @@ footer {
 
 .adiado .title {
     display: flex;
-    height: 30px;
+    height: 15px;
     background-color: var(--amarelo);
     border-radius: 5px 5px 0px 0px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     margin-bottom: 3px;
 }
 
@@ -296,12 +299,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 2px;
 }
 
 .adiado .passo p {
     color: var(--amarelo);
     text-align: center;
+    font-size: 0.9rem;
 }
 

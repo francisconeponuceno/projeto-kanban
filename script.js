@@ -140,7 +140,7 @@ function RecarregarCarregamento(){
 
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
 function CancelaAdia(posicao) {
-    let AdiaCancela = 'CANCELADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
+    let AdiaCancela = 'CONCLUÍDO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
     let mae = listaCompleta.children[posicao].children[1]
     for (i = 0; i < mae.children.length + 1; i++){
         if (AdiaCancela ==  'CANCELADO') {
@@ -167,7 +167,7 @@ function CancelaAdia(posicao) {
     if (ListaDeCaregamento != ''){
         NoCarregamento.innerHTML = ''; 
     }
-    if (ListaDeCaregamento == ''){
+    else{
         NoCarregamento.innerHTML = 'NÃO À CARREGAMENTO NESSE MOMENTO!!!'; 
     }
  }
