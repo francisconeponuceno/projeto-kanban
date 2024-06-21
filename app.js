@@ -1,28 +1,20 @@
 
 
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database(':memory:');
 
+db.serialize(() => {
+    db.run("CREATE TABLE lorem (info TEXT)");
 
-    function criarBanco() {
-    const db = open({
-        filename: './banco.db',
-        driver: sqlite3.Database,
+    const stmt = db.prepare("INSERT INTO lorem VALUES (?)");
+    for (let i = 0; i < 10; i++) {
+        stmt.run("Ipsum " + i);
+    }
+    stmt.finalize();
+
+    db.each("SELECT rowid AS id, info FROM lorem", (err, row) => {
+        console.log(row.id + ": " + row.info);
     });
-
-    db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER) VALUES ('T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80')");
-}
-
-
-
-criarBanco();
-
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('banco.db');
-var check;
-
-db.serialize(function(){
-    
-    alert('blz')
-    db.run("CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY,clt TEXT,mot TEXT, dest TEXT,placa TEXT,cub INTEGER");
 });
+
+db.close();

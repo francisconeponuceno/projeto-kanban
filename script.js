@@ -1,4 +1,22 @@
 
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database(':memory:');
+
+db.serialize(() => {
+    db.run("CREATE TABLE lorem (info TEXT)");
+
+    const stmt = db.prepare("INSERT INTO lorem VALUES (?)");
+    for (let i = 0; i < 10; i++) {
+        stmt.run("Ipsum " + i);
+    }
+    stmt.finalize();
+
+    db.each("SELECT rowid AS id, info FROM lorem", (err, row) => {
+        console.log(row.id + ": " + row.info);
+    });
+});
+
+db.close();
 
 let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal')
@@ -11,8 +29,8 @@ let CONE = "bi bi-cone-striped"
 let CHEKOK = "bi bi-check2-circle"
 let canc = "bi bi-x-circle-fill"
 let circulo = "bi bi-arrow-repeat"
+let ClasseFase = ['fase','concluido','adiado','cancelado',CARRO,CONE,CHEKOK,canc,circulo,]
 
-let ClasseFase = 'fase'
 
 
 /*FUNÇÃO PARA ADICIONAR UM CARREGAMENTO*/
@@ -61,7 +79,7 @@ function updateCarregamento(){
 
             <div class="mae">
 
-                <div class="${ClasseFase}">
+                <div class="${ClasseFase[0]}">
                     <div class="title">
                         <h1 onclick="CancelaAdia(${posicao})">EM ESPERA</h1>
                     </div>
