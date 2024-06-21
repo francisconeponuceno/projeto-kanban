@@ -157,7 +157,7 @@ function CancelaAdia(posicao) {
         if (AdiaCancela == 'CONCLUÍDO') {
             mae.children[i].className = 'concluido'
             mae.children[i].children[1].children[0].classList = CHEKOK
-            mae.children[i].children[1].children[1].innerHTML = 'CONCLUÍDO!'   
+            mae.children[i].children[1].children[1].innerHTML = 'CONCLUÍDO!'
         }
         
     }
