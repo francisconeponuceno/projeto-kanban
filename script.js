@@ -1,22 +1,7 @@
 
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database(':memory:');
 
-db.serialize(() => {
-    db.run("CREATE TABLE lorem (info TEXT)");
 
-    const stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-    for (let i = 0; i < 10; i++) {
-        stmt.run("Ipsum " + i);
-    }
-    stmt.finalize();
 
-    db.each("SELECT rowid AS id, info FROM lorem", (err, row) => {
-        console.log(row.id + ": " + row.info);
-    });
-});
-
-db.close();
 
 let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal')
@@ -29,8 +14,8 @@ let CONE = "bi bi-cone-striped"
 let CHEKOK = "bi bi-check2-circle"
 let canc = "bi bi-x-circle-fill"
 let circulo = "bi bi-arrow-repeat"
-let ClasseFase = ['fase','concluido','adiado','cancelado',CARRO,CONE,CHEKOK,canc,circulo,]
-
+let ClasseFase = ['fase','concluido','adiado','cancelado',]
+let ClasseIcone = [CARRO,CONE,CHEKOK,canc,circulo]
 
 
 /*FUNÇÃO PARA ADICIONAR UM CARREGAMENTO*/
@@ -91,7 +76,7 @@ function updateCarregamento(){
 
                 <div class="fase">
                     <div class="title" id="carregando">
-                        <h1 onclick="criarBanco()">CARREGANDO</h1>
+                        <h1 onclick="salvardb()">CARREGANDO</h1>
                     </div>
                     <div class="passo">
                         <i class="bi bi-cone-striped" id="IconP2"></i>
@@ -162,8 +147,7 @@ function CancelaAdia(posicao) {
     let mae = listaCompleta.children[posicao].children[1]
     for (i = 0; i < mae.children.length + 1; i++){
         if (AdiaCancela ==  'CANCELADO') {
-            mae.children[i].classList.remove('fase')
-            mae.children[i].classList.add('cancelado')
+            mae.children[i].className = 'cancelado'
             mae.children[i].children[1].children[0].classList = canc
             mae.children[i].children[1].children[1].innerHTML = "CANCELADO!"     
         }
@@ -189,6 +173,19 @@ function CancelaAdia(posicao) {
         NoCarregamento.innerHTML = 'NÃO À CARREGAMENTO NESSE MOMENTO!!!'; 
     }
  }
+
+function salvardb() {
+    
+    const sqlite3 = require('sqlite3').verbose();
+    alert('dados salvos')
+    const db = new sqlite3.Database(':banco.db:');
+    db.serialize(
+        db.run("CREATE TABLE carrego (nome TEXT)"),
+        db.prepare("INSERT INTO carrego VALUES (francisco)"),
+        db.close()
+    );
+    
+}
 
  RecarregarCarregamento()
 

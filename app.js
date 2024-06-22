@@ -1,20 +1,31 @@
+import sqlite3 from 'sqlite3';
+import { open } from 'sqlite';
 
-
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database(':memory:');
-
-db.serialize(() => {
-    db.run("CREATE TABLE lorem (info TEXT)");
-
-    const stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-    for (let i = 0; i < 10; i++) {
-        stmt.run("Ipsum " + i);
-    }
-    stmt.finalize();
-
-    db.each("SELECT rowid AS id, info FROM lorem", (err, row) => {
-        console.log(row.id + ": " + row.info);
+async function criardb(nome, sobrenome) {
+    const db = await open({
+        filename: './banco.db',
+        driver: sqlite3.Database,
     });
-});
+    db.run(`CREATE TABLE IF NOT EXISTS carrego (id INTEGER PRIMARY KEY, nome TEXT, sobrenome TEXT)`)
+}
 
-db.close();
+criardb()
+
+
+
+function salvardb(){
+    alert('dados salvos')
+    const sqlite3 = require('sqlite3').verbose();
+    const db = new sqlite3.Database(':banco.db:');
+    db.serialize(
+        db.run("CREATE TABLE carrego (nome TEXT)"),
+        db.prepare("INSERT INTO carrego VALUES (francisco)"),
+        db.close()
+    );
+    
+}
+
+
+
+
+
