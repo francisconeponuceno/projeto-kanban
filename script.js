@@ -69,7 +69,7 @@ function updateCarregamento(){
                         <h1 onclick="CancelaAdia(${posicao})">EM ESPERA</h1>
                     </div>
                     <div class="passo">
-                        <i class="bi bi-truck" id="IconP1"></i>
+                        <i class="${ClasseIcone[0]}" id="IconP1"></i>
                         <p id="MsgP1">separando mercadoria ou aguardando conferente!</p>
                     </div>
                 </div>
@@ -175,7 +175,6 @@ function CancelaAdia(posicao) {
  }
 
 function salvardb() {
-    
     const sqlite3 = require('sqlite3').verbose();
     alert('dados salvos')
     const db = new sqlite3.Database(':banco.db:');
