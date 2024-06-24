@@ -1,12 +1,9 @@
 
 
-
-
-
 let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
-const listaCompleta = document.querySelector('.principal')
+const listaCompleta = document.querySelector('.principal');
 let ListaDeCaregamento = [];
-const NoCarregamento = document.querySelector('.TextVasio')
+const NoCarregamento = document.querySelector('.TextVasio');
 
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
@@ -174,17 +171,19 @@ function CancelaAdia(posicao) {
     }
  }
 
-function salvardb() {
-    const sqlite3 = require('sqlite3').verbose();
-    alert('dados salvos')
-    const db = new sqlite3.Database(':banco.db:');
-    db.serialize(
-        db.run("CREATE TABLE carrego (nome TEXT)"),
-        db.prepare("INSERT INTO carrego VALUES (francisco)"),
-        db.close()
-    );
-    
-}
-
  RecarregarCarregamento()
 
+
+ const mysql = require('mysql2');
+
+ const conexao = mysql.createConnection({
+     host:'localhost',
+     user:'root',
+     password:'fco5760fco',
+     database:'carregamento'
+ });
+ 
+ conexao.connect(function(erro){
+     if(erro) throw erro;
+     console.log('Conexão efetuada com sucesso!')
+ });
