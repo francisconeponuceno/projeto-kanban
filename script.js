@@ -1,6 +1,6 @@
 
 
-let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
+let Dados = ['','T', 'JOACQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal');
 let ListaDeCaregamento = [];
 const NoCarregamento = document.querySelector('.TextVasio');
@@ -87,7 +87,7 @@ function updateCarregamento(){
                     </div>
                     <div class="passo">
                         <i class="bi bi-cone-striped" id="IconP3"></i>
-                        <p id="MsgP3">Parabéns! você avançou uma etapa do processo.</p>
+                        <p id="MsgP3">você esta quase terminando</p>
                     </div>
                 </div>
 
@@ -140,7 +140,7 @@ function RecarregarCarregamento(){
 
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
 function CancelaAdia(posicao) {
-    let AdiaCancela = 'CONCLUÍDO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
+    let AdiaCancela = 'CANCELADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
     let mae = listaCompleta.children[posicao].children[1]
     for (i = 0; i < mae.children.length + 1; i++){
         if (AdiaCancela ==  'CANCELADO') {
@@ -174,16 +174,4 @@ function CancelaAdia(posicao) {
  RecarregarCarregamento()
 
 
- const mysql = require('mysql2');
-
- const conexao = mysql.createConnection({
-     host:'localhost',
-     user:'root',
-     password:'fco5760fco',
-     database:'carregamento'
- });
  
- conexao.connect(function(erro){
-     if(erro) throw erro;
-     console.log('Conexão efetuada com sucesso!')
- });
