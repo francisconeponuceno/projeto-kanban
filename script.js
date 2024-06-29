@@ -1,12 +1,9 @@
 
 
-
-
-
-let Dados = ['','T', 'JOÃO DE DEUS DA LUZ', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
-const listaCompleta = document.querySelector('.principal')
+let Dados = ['','T', 'JOACQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
+const listaCompleta = document.querySelector('.principal');
 let ListaDeCaregamento = [];
-const NoCarregamento = document.querySelector('.TextVasio')
+const NoCarregamento = document.querySelector('.TextVasio');
 
 /* VARIÁVEIS DOS ÍCONES*/
 let CARRO = "bi bi-truck"
@@ -69,7 +66,7 @@ function updateCarregamento(){
                         <h1 onclick="CancelaAdia(${posicao})">EM ESPERA</h1>
                     </div>
                     <div class="passo">
-                        <i class="bi bi-truck" id="IconP1"></i>
+                        <i class="${ClasseIcone[0]}" id="IconP1"></i>
                         <p id="MsgP1">separando mercadoria ou aguardando conferente!</p>
                     </div>
                 </div>
@@ -90,7 +87,7 @@ function updateCarregamento(){
                     </div>
                     <div class="passo">
                         <i class="bi bi-cone-striped" id="IconP3"></i>
-                        <p id="MsgP3">Parabéns! você avançou uma etapa do processo.</p>
+                        <p id="MsgP3">você esta quase terminando</p>
                     </div>
                 </div>
 
@@ -143,7 +140,7 @@ function RecarregarCarregamento(){
 
 /*FUNCÇÃO QUE ADIA OU CANCELA UM CARREGAMENTO*/
 function CancelaAdia(posicao) {
-    let AdiaCancela = 'CONCLUÍDO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
+    let AdiaCancela = 'CANCELADO' /* VARIÁVEL QUE RECEBE O INPUT DO USUÁRIO*/
     let mae = listaCompleta.children[posicao].children[1]
     for (i = 0; i < mae.children.length + 1; i++){
         if (AdiaCancela ==  'CANCELADO') {
@@ -174,6 +171,7 @@ function CancelaAdia(posicao) {
     }
  }
 
+<<<<<<< HEAD
 function salvardb() {
     
     const sqlite3 = require('sqlite3').verbose();
@@ -187,5 +185,9 @@ function salvardb() {
     
 }
 
+=======
+>>>>>>> 33f141604d0e0165772d745d587e91fe118874ea
  RecarregarCarregamento()
 
+
+ 
