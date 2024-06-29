@@ -1,4 +1,7 @@
 
+import conectaBanco from './app.js';
+const conectaBanco = require('./app.js')
+
 
 let Dados = ['','T', 'JOACQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal');
@@ -171,23 +174,8 @@ function CancelaAdia(posicao) {
     }
  }
 
-<<<<<<< HEAD
-function salvardb() {
-    
-    const sqlite3 = require('sqlite3').verbose();
 
-    const db = new sqlite3.Database(':banco.db:');
-    db.serialize(
-        db.run("CREATE TABLE carrego (nome TEXT)"),
-        db.prepare("INSERT INTO carrego VALUES (francisco)"),
-        db.close()
-    );
-    
-}
 
-=======
->>>>>>> 33f141604d0e0165772d745d587e91fe118874ea
  RecarregarCarregamento()
 
 
- 
