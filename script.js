@@ -177,7 +177,7 @@ function CancelaAdia(posicao) {
 function salvardb() {
     
     const sqlite3 = require('sqlite3').verbose();
-    alert('dados salvos')
+
     const db = new sqlite3.Database(':banco.db:');
     db.serialize(
         db.run("CREATE TABLE carrego (nome TEXT)"),
