@@ -1,4 +1,11 @@
 
+<<<<<<< HEAD
+=======
+import conectaBanco from './app.js';
+const conectaBanco = require('./app.js')
+
+
+>>>>>>> 1a8f0ef83fc42f293da1395dcbec8b211de2f53c
 let Dados = ['','T', 'JOACQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal');
 let ListaDeCaregamento = [];
@@ -170,7 +177,8 @@ function CancelaAdia(posicao) {
     }
  }
 
+
+
  RecarregarCarregamento()
 
 
- 
