@@ -1,5 +1,4 @@
 
-
 let Dados = ['','T', 'JOACQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal');
 let ListaDeCaregamento = [];
@@ -11,7 +10,7 @@ let CONE = "bi bi-cone-striped"
 let CHEKOK = "bi bi-check2-circle"
 let canc = "bi bi-x-circle-fill"
 let circulo = "bi bi-arrow-repeat"
-let ClasseFase = ['fase','concluido','adiado','cancelado',]
+let ClasseFase = ['fase','concluido','adiado','cancelado']
 let ClasseIcone = [CARRO,CONE,CHEKOK,canc,circulo]
 
 
