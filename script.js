@@ -1,7 +1,15 @@
 
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
+import conectaBanco from './app.js';
+const conectaBanco = require('./app.js')
+>>>>>>> d16447536fa95116be409717dbdae3ac8bdab175
 
 
-
+>>>>>>> 1a8f0ef83fc42f293da1395dcbec8b211de2f53c
 let Dados = ['','T', 'JOACQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
 const listaCompleta = document.querySelector('.principal');
 let ListaDeCaregamento = [];
@@ -13,7 +21,7 @@ let CONE = "bi bi-cone-striped"
 let CHEKOK = "bi bi-check2-circle"
 let canc = "bi bi-x-circle-fill"
 let circulo = "bi bi-arrow-repeat"
-let ClasseFase = ['fase','concluido','adiado','cancelado',]
+let ClasseFase = ['fase','concluido','adiado','cancelado']
 let ClasseIcone = [CARRO,CONE,CHEKOK,canc,circulo]
 
 
