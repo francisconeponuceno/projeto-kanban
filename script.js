@@ -1,6 +1,5 @@
 
-import conectaBanco from './app.js';
-const conectaBanco = require('./app.js')
+
 
 
 let Dados = ['','T', 'JOACQUIM MAIA PEREIRA', 'MARANHÃO / PARÁ / TOCANTINS',  'FRANCISCO', 'KBI-6155', '80'];
